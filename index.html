@@ -3,722 +3,609 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>The Aperture Theory of Awareness</title>
-
-<meta name="description" content="The Aperture Theory of Awareness — a theoretical framework exploring consciousness as constrained access within an underlying structure.">
+<meta
+    name="description"
+    content="The Aperture Theory of Awareness — a theoretical framework exploring consciousness as constrained access within an underlying structure."
+>
 <meta name="author" content="Helen Christie">
-
 <style>
-
+/* =========================================================
+   CORE
+========================================================= */
 :root {
-    --bg: #08090c;
-    --surface: #101218;
-    --surface2: #141720;
-    --text: #f1f2f5;
-    --muted: #9da3ae;
-    --line: rgba(255,255,255,0.09);
-    --accent: #d9dcff;
-    --accent-soft: rgba(217,220,255,0.07);
-    --max: 1080px;
+    --black: #050505;
+    --near-black: #080808;
+    --surface: #0d0d0d;
+    --surface-light: #121212;
+    --white: #eeeeeb;
+    --soft-white: #d5d5d0;
+    --grey: #858585;
+    --dark-grey: #565656;
+    --line: rgba(255,255,255,0.085);
+    --max-width: 1100px;
 }
-
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-
 html {
     scroll-behavior: smooth;
 }
-
 body {
     background:
         radial-gradient(
-            circle at 50% -10%,
-            rgba(140,150,255,0.11),
-            transparent 36%
+            circle at 50% 0%,
+            rgba(255,255,255,0.035),
+            transparent 38%
         ),
-        var(--bg);
-
-    color: var(--text);
-
+        var(--black);
+    color: var(--white);
     font-family:
         -apple-system,
         BlinkMacSystemFont,
         "Inter",
-        "Segoe UI",
-        Roboto,
-        Helvetica,
+        "Helvetica Neue",
         Arial,
         sans-serif;
-
-    line-height: 1.7;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
 }
-
 a {
     color: inherit;
     text-decoration: none;
 }
-
 .container {
-    width: min(92%, var(--max));
+    width: min(92%, var(--max-width));
     margin: auto;
 }
-
-
-/* NAVIGATION */
-
+/* =========================================================
+   NAVIGATION
+========================================================= */
 nav {
     position: sticky;
     top: 0;
-    z-index: 100;
-
-    background: rgba(8,9,12,0.78);
-    backdrop-filter: blur(18px);
-
+    z-index: 1000;
+    background: rgba(5,5,5,0.82);
+    backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--line);
 }
-
 .nav-inner {
-    height: 70px;
-
+    height: 68px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-
 .logo {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--soft-white);
 }
-
 .nav-links {
     display: flex;
-    gap: 26px;
+    gap: 27px;
 }
-
 .nav-links a {
-    color: var(--muted);
-    font-size: 13px;
+    color: var(--grey);
+    font-size: 12px;
     transition: color 0.2s ease;
 }
-
 .nav-links a:hover {
-    color: var(--text);
+    color: var(--white);
 }
-
-
-/* HERO */
-
+/* =========================================================
+   HERO
+========================================================= */
 .hero {
-    min-height: 88vh;
-
+    min-height: 91vh;
     display: flex;
     align-items: center;
     justify-content: center;
-
     text-align: center;
+    position: relative;
 }
-
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 110px;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(255,255,255,0.25),
+        transparent
+    );
+    bottom: 0;
+    left: 50%;
+}
 .hero-inner {
-    max-width: 850px;
-
-    animation: fadeUp 1s ease both;
+    max-width: 900px;
+    animation: appear 1.2s ease both;
 }
-
 .eyebrow {
     display: inline-block;
-
-    padding: 7px 14px;
-
-    border: 1px solid var(--line);
-    border-radius: 999px;
-
-    color: var(--muted);
-
-    font-size: 12px;
-    letter-spacing: 0.12em;
+    color: var(--grey);
+    font-size: 11px;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-
-    margin-bottom: 30px;
+    margin-bottom: 32px;
 }
-
 h1 {
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: clamp(46px, 8vw, 88px);
-
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+    font-size: clamp(48px, 8vw, 94px);
     font-weight: 400;
-
-    line-height: 1.02;
-
-    letter-spacing: -0.045em;
-
-    margin-bottom: 30px;
+    line-height: 0.98;
+    letter-spacing: -0.055em;
+    color: var(--white);
+    margin-bottom: 34px;
 }
-
 .hero-tagline {
-    font-size: clamp(20px, 3vw, 28px);
-
-    color: var(--accent);
-
-    margin-bottom: 22px;
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+    font-size: clamp(20px, 3vw, 27px);
+    color: var(--soft-white);
+    margin-bottom: 24px;
 }
-
 .hero-description {
-    max-width: 700px;
-
+    max-width: 680px;
     margin: auto;
-
-    color: var(--muted);
-
-    font-size: 17px;
+    color: var(--grey);
+    font-size: 16px;
 }
-
 .hero-actions {
-    margin-top: 38px;
-
+    margin-top: 40px;
     display: flex;
     justify-content: center;
-
-    gap: 14px;
-
+    gap: 12px;
     flex-wrap: wrap;
 }
-
 .button {
     display: inline-flex;
-
     align-items: center;
     justify-content: center;
-
-    padding: 12px 20px;
-
-    border-radius: 8px;
-
+    padding: 11px 19px;
     border: 1px solid var(--line);
-
-    font-size: 14px;
-
-    transition: all 0.2s ease;
+    border-radius: 5px;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
 }
-
 .button.primary {
-    background: var(--text);
-    color: var(--bg);
+    background: var(--white);
+    color: var(--black);
+    border-color: var(--white);
 }
-
 .button.secondary {
+    color: var(--soft-white);
     background: transparent;
-    color: var(--text);
 }
-
 .button:hover {
     transform: translateY(-2px);
 }
-
-
-/* SECTIONS */
-
+.button.secondary:hover {
+    background: rgba(255,255,255,0.045);
+    border-color: rgba(255,255,255,0.18);
+}
+/* =========================================================
+   SECTIONS
+========================================================= */
 section {
-    padding: 110px 0;
-
+    padding: 120px 0;
     border-top: 1px solid var(--line);
 }
-
 .section-header {
     display: grid;
-
-    grid-template-columns: 0.8fr 2fr;
-
-    gap: 60px;
-
-    margin-bottom: 60px;
+    grid-template-columns: 0.7fr 2fr;
+    gap: 70px;
+    margin-bottom: 62px;
 }
-
 .section-number {
-    color: var(--muted);
-
-    font-size: 13px;
-
-    letter-spacing: 0.12em;
+    color: var(--dark-grey);
+    font-size: 11px;
+    letter-spacing: 0.2em;
 }
-
 .section-title {
-    font-family: Georgia, "Times New Roman", serif;
-
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
     font-weight: 400;
-
-    font-size: clamp(34px, 5vw, 52px);
-
-    line-height: 1.15;
+    font-size: clamp(36px, 5vw, 55px);
+    line-height: 1.08;
+    letter-spacing: -0.025em;
 }
-
 .section-intro {
     max-width: 720px;
-
-    margin-left: auto;
-
-    color: var(--muted);
-
-    font-size: 17px;
+    margin-top: 20px;
+    color: var(--grey);
+    font-size: 16px;
 }
-
-
-/* THESIS */
-
+/* =========================================================
+   THESIS
+========================================================= */
 .thesis-box {
-    padding: 55px;
-
+    padding: 65px;
     border: 1px solid var(--line);
-
-    border-radius: 14px;
-
     background:
         linear-gradient(
             135deg,
             rgba(255,255,255,0.035),
-            rgba(255,255,255,0.012)
+            rgba(255,255,255,0.008)
         );
 }
-
 .thesis {
-    max-width: 850px;
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: clamp(28px, 4vw, 45px);
-
-    line-height: 1.3;
+    max-width: 900px;
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+    font-size: clamp(28px, 4vw, 46px);
+    line-height: 1.28;
+    letter-spacing: -0.02em;
 }
-
-.thesis span {
-    color: var(--accent);
+.thesis em {
+    color: var(--soft-white);
+    font-style: normal;
 }
-
-
-/* CARDS */
-
+/* =========================================================
+   CARDS
+========================================================= */
 .grid {
     display: grid;
-
     grid-template-columns: repeat(2, 1fr);
-
-    gap: 18px;
-}
-
-.card {
-    padding: 32px;
-
+    gap: 1px;
+    background: var(--line);
     border: 1px solid var(--line);
-
-    border-radius: 12px;
-
-    background: var(--surface);
 }
-
+.card {
+    padding: 38px;
+    background: var(--surface);
+    min-height: 190px;
+    transition: background 0.25s ease;
+}
+.card:hover {
+    background: var(--surface-light);
+}
 .card h3 {
-    font-family: Georgia, "Times New Roman", serif;
-
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
     font-size: 24px;
-
     font-weight: 400;
-
     margin-bottom: 14px;
 }
-
 .card p {
-    color: var(--muted);
+    color: var(--grey);
+    font-size: 15px;
 }
-
-
-/* MATHEMATICS */
-
+/* =========================================================
+   MATHEMATICS
+========================================================= */
 .equation-card {
-    margin: 35px 0;
-
-    padding: 45px;
-
+    margin: 28px 0;
+    padding: 46px 35px;
     border: 1px solid var(--line);
-
-    border-radius: 14px;
-
     background: var(--surface);
-
     text-align: center;
-
     overflow-x: auto;
 }
-
 .equation {
     font-family:
         "Times New Roman",
         Georgia,
         serif;
-
-    font-size: clamp(25px, 4vw, 40px);
-
-    letter-spacing: 0.02em;
-
+    color: var(--white);
+    font-size: clamp(25px, 4vw, 41px);
+    letter-spacing: 0.015em;
     white-space: nowrap;
 }
-
 .equation-label {
-    margin-top: 20px;
-
-    color: var(--muted);
-
-    font-size: 13px;
+    margin-top: 17px;
+    color: var(--dark-grey);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
 }
-
 .definitions {
     display: grid;
-
     grid-template-columns: repeat(2, 1fr);
-
-    gap: 16px;
-
-    margin-top: 35px;
-}
-
-.definition {
-    padding: 28px;
-
+    gap: 1px;
+    background: var(--line);
     border: 1px solid var(--line);
-
-    border-radius: 12px;
-
+}
+.definition {
+    padding: 31px;
     background: var(--surface);
 }
-
 .definition-symbol {
-    font-family: Georgia, serif;
-
+    font-family:
+        "Times New Roman",
+        Georgia,
+        serif;
+    color: var(--soft-white);
     font-size: 25px;
-
-    color: var(--accent);
-
     margin-bottom: 12px;
 }
-
 .definition p {
-    color: var(--muted);
-
+    color: var(--grey);
+    font-size: 14px;
+}
+/* =========================================================
+   OPEN MATHEMATICAL QUESTION
+========================================================= */
+.open-problem {
+    margin-top: 55px;
+    padding: 48px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+}
+.open-problem h3 {
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 18px;
+}
+.open-problem p {
+    color: var(--grey);
     font-size: 15px;
 }
-
-
-/* OPEN MATHEMATICAL QUESTION */
-
-.open-problem {
-    margin-top: 50px;
-
-    padding: 45px;
-
-    border-left: 2px solid var(--accent);
-
-    background: var(--accent-soft);
-}
-
-.open-problem h3 {
-    font-family: Georgia, serif;
-
-    font-size: 28px;
-
-    font-weight: 400;
-
-    margin-bottom: 16px;
-}
-
-.open-problem p {
-    color: var(--muted);
-}
-
-
-/* MORTALITY */
-
+/* =========================================================
+   MORTALITY
+========================================================= */
 .mortality {
-    position: relative;
-
-    padding: 70px;
-
+    padding: 72px;
     border: 1px solid var(--line);
-
-    border-radius: 16px;
-
     background:
         radial-gradient(
-            circle at 80% 30%,
-            rgba(217,220,255,0.06),
+            circle at 80% 20%,
+            rgba(255,255,255,0.035),
             transparent 35%
         ),
         var(--surface);
 }
-
 .mortality h3 {
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: clamp(30px, 4vw, 44px);
-
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+    font-size: clamp(31px, 4vw, 46px);
     font-weight: 400;
-
-    margin-bottom: 25px;
+    line-height: 1.15;
+    margin-bottom: 30px;
 }
-
 .mortality p {
-    max-width: 780px;
-
-    color: var(--muted);
-
-    font-size: 17px;
-
-    margin-bottom: 20px;
+    max-width: 800px;
+    color: var(--grey);
+    font-size: 16px;
+    margin-bottom: 22px;
 }
-
 .mortality-highlight {
-    margin-top: 35px;
-
-    padding: 30px;
-
-    border-left: 2px solid var(--accent);
-
-    background: var(--accent-soft);
-
-    font-family: Georgia, serif;
-
+    margin: 40px 0;
+    padding: 32px 35px;
+    border-left: 1px solid rgba(255,255,255,0.35);
+    background: rgba(255,255,255,0.025);
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+    color: var(--soft-white);
     font-size: 21px;
-
-    line-height: 1.5;
+    line-height: 1.55;
 }
-
-
-/* LIMITS */
-
+/* =========================================================
+   OPEN QUESTIONS
+========================================================= */
 .limit-list {
     display: grid;
-
-    gap: 14px;
-}
-
-.limit {
-    padding: 25px 28px;
-
+    gap: 1px;
+    background: var(--line);
     border: 1px solid var(--line);
-
-    border-radius: 10px;
-
+}
+.limit {
+    padding: 28px 30px;
     background: var(--surface);
 }
-
 .limit strong {
     display: block;
-
-    margin-bottom: 6px;
+    color: var(--soft-white);
+    font-weight: 500;
+    margin-bottom: 7px;
 }
-
 .limit p {
-    color: var(--muted);
+    color: var(--grey);
+    font-size: 14px;
 }
-
-
-/* AUTHOR */
-
+/* =========================================================
+   AUTHOR
+========================================================= */
 .author {
     display: grid;
-
     grid-template-columns: 1fr 2fr;
-
-    gap: 60px;
-
-    align-items: start;
+    gap: 70px;
 }
-
 .author-name {
-    font-family: Georgia, serif;
-
-    font-size: 34px;
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+    font-size: 37px;
+    font-weight: 400;
 }
-
 .author-text {
-    color: var(--muted);
-
-    font-size: 17px;
+    color: var(--grey);
+    font-size: 16px;
 }
-
-
-/* FOOTER */
-
+.author-text .button {
+    margin-top: 8px;
+}
+/* =========================================================
+   FOOTER
+========================================================= */
 footer {
     border-top: 1px solid var(--line);
-
-    padding: 45px 0;
+    padding: 42px 0;
 }
-
 .footer-inner {
     display: flex;
-
     justify-content: space-between;
-
+    align-items: center;
     gap: 30px;
-
     flex-wrap: wrap;
 }
-
 .footer-text {
-    color: var(--muted);
-
-    font-size: 13px;
+    color: var(--dark-grey);
+    font-size: 11px;
+    letter-spacing: 0.04em;
 }
-
 .substack {
-    color: var(--accent);
+    color: var(--grey);
+    transition: color 0.2s ease;
 }
-
-
-/* ANIMATION */
-
-@keyframes fadeUp {
-
+.substack:hover {
+    color: var(--white);
+}
+/* =========================================================
+   ANIMATION
+========================================================= */
+@keyframes appear {
     from {
         opacity: 0;
-        transform: translateY(18px);
+        transform: translateY(20px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
-
-
-/* MOBILE */
-
+/* =========================================================
+   MOBILE
+========================================================= */
 @media (max-width: 760px) {
-
     .nav-links {
         display: none;
     }
-
     .hero {
-        min-height: 82vh;
+        min-height: 84vh;
     }
-
+    h1 {
+        font-size: clamp(46px, 14vw, 70px);
+    }
     section {
-        padding: 80px 0;
+        padding: 85px 0;
     }
-
     .section-header {
         grid-template-columns: 1fr;
-
-        gap: 20px;
+        gap: 18px;
     }
-
     .section-intro {
-        margin-left: 0;
+        margin-top: 15px;
     }
-
-    .definitions,
     .grid {
         grid-template-columns: 1fr;
     }
-
-    .thesis-box,
-    .equation-card,
-    .open-problem,
-    .mortality {
-        padding: 30px;
+    .definitions {
+        grid-template-columns: 1fr;
     }
-
+    .thesis-box {
+        padding: 35px;
+    }
+    .equation-card {
+        padding: 35px 20px;
+    }
+    .open-problem {
+        padding: 32px;
+    }
+    .mortality {
+        padding: 35px;
+    }
     .author {
         grid-template-columns: 1fr;
-
         gap: 25px;
     }
-
+    .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+    }
 }
-
 </style>
 </head>
-
-
 <body>
-
-
-<!-- NAVIGATION -->
-
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
 <nav>
-
     <div class="container nav-inner">
-
         <div class="logo">
             ATA
         </div>
-
         <div class="nav-links">
-
-            <a href="#thesis">Thesis</a>
-
-            <a href="#framework">Framework</a>
-
-            <a href="#formalisation">Formalisation</a>
-
-            <a href="#implications">Implications</a>
-
-            <a href="#mortality">Mortality</a>
-
-            <a href="#questions">Open Questions</a>
-
-            <a href="#author">Author</a>
-
+            <a href="#thesis">
+                Thesis
+            </a>
+            <a href="#framework">
+                Framework
+            </a>
+            <a href="#formalisation">
+                Formalisation
+            </a>
+            <a href="#implications">
+                Implications
+            </a>
+            <a href="#mortality">
+                Mortality
+            </a>
+            <a href="#questions">
+                Open Questions
+            </a>
+            <a href="#author">
+                Author
+            </a>
         </div>
-
     </div>
-
 </nav>
-
-
-<!-- HERO -->
-
+<!-- =====================================================
+     HERO
+===================================================== -->
 <header class="hero">
-
     <div class="container hero-inner">
-
         <div class="eyebrow">
             The Aperture Theory of Awareness
         </div>
-
         <h1>
             Awareness as<br>
             constrained access.
         </h1>
-
         <div class="hero-tagline">
             A theoretical framework for consciousness.
         </div>
-
         <p class="hero-description">
-
             The Aperture Theory of Awareness proposes that
             conscious experience can be understood in terms
             of constrained access to an underlying structure,
             with recursive organisation shaping the form and
             continuity of experience.
-
         </p>
-
         <div class="hero-actions">
-
             <a
                 class="button primary"
                 href="#formalisation"
             >
                 Explore the formalisation
             </a>
-
             <a
                 class="button secondary"
                 href="https://substack.com/@forbiddenzoot"
@@ -726,889 +613,534 @@ footer {
             >
                 Read on Substack
             </a>
-
         </div>
-
     </div>
-
 </header>
-
-
 <main>
-
-
-<!-- 01 THESIS -->
-
+<!-- =====================================================
+     01 THESIS
+===================================================== -->
 <section id="thesis">
-
     <div class="container">
-
         <div class="section-header">
-
             <div class="section-number">
                 01 / THESIS
             </div>
-
             <div>
-
                 <h2 class="section-title">
                     The central proposal
                 </h2>
-
                 <p class="section-intro">
-
                     ATA begins with a distinction between
                     an underlying structure and the particular
                     conditions through which that structure
                     becomes accessible to experience.
-
                 </p>
-
             </div>
-
         </div>
-
-
         <div class="thesis-box">
-
             <p class="thesis">
-
-                <span>
+                <em>
                     Conscious awareness emerges from
                     recursively organised constraints.
-                </span>
-
+                </em>
             </p>
-
         </div>
-
     </div>
-
 </section>
-
-
-<!-- 02 FRAMEWORK -->
-
+<!-- =====================================================
+     02 FRAMEWORK
+===================================================== -->
 <section id="framework">
-
     <div class="container">
-
         <div class="section-header">
-
             <div class="section-number">
                 02 / FRAMEWORK
             </div>
-
             <div>
-
                 <h2 class="section-title">
                     The aperture concept
                 </h2>
-
                 <p class="section-intro">
-
                     The aperture is not proposed as a physical
                     object. It describes the relationship between
                     an underlying structure and the locally
                     accessible organisation through which
                     experience occurs.
-
                 </p>
-
             </div>
-
         </div>
-
-
         <div class="grid">
-
-
             <div class="card">
-
                 <h3>
                     Underlying structure
                 </h3>
-
                 <p>
-
                     ATA begins with an underlying structured
                     domain containing states, relations and
                     events. The framework does not require
                     this structure to be identified with one
                     particular physical theory.
-
                 </p>
-
             </div>
-
-
             <div class="card">
-
                 <h3>
                     Constraint
                 </h3>
-
                 <p>
-
                     Access to the underlying structure is
                     constrained. Biological organisation,
                     information processing and temporal
                     structure determine what can become
                     locally accessible.
-
                 </p>
-
             </div>
-
-
             <div class="card">
-
                 <h3>
                     Aperture
                 </h3>
-
                 <p>
-
                     The aperture represents the mapping between
                     the underlying structure and the organisation
                     available to a particular experiential
                     perspective.
-
                 </p>
-
             </div>
-
-
             <div class="card">
-
                 <h3>
                     Sequential experience
                 </h3>
-
                 <p>
-
                     Experience appears ordered and continuous
                     because access is locally structured. Within
                     an eternalist interpretation, temporal passage
                     may therefore be understood as a feature of
                     access rather than necessarily a property of
                     the underlying structure itself.
-
                 </p>
-
             </div>
-
-
         </div>
-
     </div>
-
 </section>
-
-
-<!-- 03 FORMALISATION -->
-
+<!-- =====================================================
+     03 FORMALISATION
+===================================================== -->
 <section id="formalisation">
-
     <div class="container">
-
         <div class="section-header">
-
             <div class="section-number">
                 03 / FORMALISATION
             </div>
-
             <div>
-
                 <h2 class="section-title">
                     Mathematical structure
                 </h2>
-
                 <p class="section-intro">
-
                     The mathematical component of ATA is an
                     attempt to express its central concepts
                     precisely enough that their relationships
                     can be examined mathematically.
-
                 </p>
-
             </div>
-
         </div>
-
-
+        <!-- CORE EQUATION -->
         <div class="equation-card">
-
             <div class="equation">
-
                 E(t) = A<sub>C(t)</sub>(M)
-
             </div>
-
             <div class="equation-label">
-
                 Core candidate formulation
-
             </div>
-
         </div>
-
-
+        <!-- DEFINITIONS -->
         <div class="definitions">
-
-
             <div class="definition">
-
                 <div class="definition-symbol">
                     M
                 </div>
-
                 <p>
-
                     The underlying model or structured domain
                     from which accessible states are obtained.
-
                 </p>
-
             </div>
-
-
             <div class="definition">
-
                 <div class="definition-symbol">
                     C(t)
                 </div>
-
                 <p>
-
                     A time-dependent configuration of constraints
                     governing accessibility.
-
                 </p>
-
             </div>
-
-
             <div class="definition">
-
                 <div class="definition-symbol">
                     A<sub>C</sub>
                 </div>
-
                 <p>
-
                     An aperture mapping associated with a
                     particular constraint configuration.
-
                 </p>
-
             </div>
-
-
             <div class="definition">
-
                 <div class="definition-symbol">
                     E(t)
                 </div>
-
                 <p>
-
                     The resulting experiential organisation
                     represented at time t.
-
                 </p>
-
             </div>
-
-
         </div>
-
-
+        <!-- STRUCTURE -->
         <div class="equation-card">
-
             <div class="equation">
-
                 M = (X, g, Ψ)
-
             </div>
-
             <div class="equation-label">
-
                 Candidate decomposition of the underlying structure
-
             </div>
-
         </div>
-
-
+        <!-- ACCESSIBILITY -->
         <div class="equation-card">
-
             <div class="equation">
-
                 α(x,t;C) ∈ [0,1]
-
             </div>
-
             <div class="equation-label">
-
                 Candidate accessibility function
-
             </div>
-
         </div>
-
-
+        <!-- INTEGRAL -->
         <div class="equation-card">
-
             <div class="equation">
-
                 E(t) =
                 ∫<sub>M</sub>
                 α(x,t;C(t)) Ψ(x) dμ(x)
-
             </div>
-
             <div class="equation-label">
-
                 Continuous candidate representation
-
             </div>
-
         </div>
-
-
+        <!-- DYNAMICS -->
         <div class="equation-card">
-
             <div class="equation">
-
                 dC / dt = F(C,u,t)
-
             </div>
-
             <div class="equation-label">
-
                 Candidate constraint dynamics
-
             </div>
-
         </div>
-
-
+        <!-- RECURSION -->
         <div class="equation-card">
-
             <div class="equation">
-
                 C<sup>(k+1)</sup>
                 =
                 F<sub>k</sub>(C<sup>(k)</sup>)
-
             </div>
-
             <div class="equation-label">
-
                 Recursive organisation
-
             </div>
-
         </div>
-
-
+        <!-- OPEN MATHEMATICAL QUESTION -->
         <div class="open-problem">
-
             <h3>
                 An open mathematical question
             </h3>
-
             <p>
-
                 ATA proposes that recursive organisation of
                 constraints may be important to the structure
                 of experience. A further question is whether
                 this organisation can be represented by a
                 mathematically meaningful quantity.
-
             </p>
-
-
             <div class="equation-card">
-
                 <div class="equation">
-
                     R : 𝒞 → ℝ
-
                 </div>
-
             </div>
-
-
             <p>
-
                 Here, 𝒞 represents a space of constraint
                 configurations. The form of R is intentionally
                 left open. Determining whether such a quantity
                 can be rigorously defined is part of the
                 mathematical development of the framework.
-
             </p>
-
         </div>
-
     </div>
-
 </section>
-
-
-<!-- 04 IMPLICATIONS -->
-
+<!-- =====================================================
+     04 PHILOSOPHICAL IMPLICATIONS
+===================================================== -->
 <section id="implications">
-
     <div class="container">
-
         <div class="section-header">
-
             <div class="section-number">
                 04 / IMPLICATIONS
             </div>
-
             <div>
-
                 <h2 class="section-title">
                     Philosophical implications
                 </h2>
-
                 <p class="section-intro">
-
                     The following are philosophical interpretations
                     of the framework rather than established
                     empirical conclusions.
-
                 </p>
-
             </div>
-
         </div>
-
-
         <div class="grid">
-
-
             <div class="card">
-
                 <h3>
                     Identity
                 </h3>
-
                 <p>
-
                     Individual identity can be interpreted as
                     arising from the particular constraints through
                     which experience becomes locally organised.
-
                 </p>
-
             </div>
-
-
             <div class="card">
-
                 <h3>
                     Continuity
                 </h3>
-
                 <p>
-
                     The continuity of conscious experience may
                     correspond to ordered accessibility between
                     successive experiential configurations.
-
                 </p>
-
             </div>
-
-
             <div class="card">
-
                 <h3>
                     Ignorance
                 </h3>
-
                 <p>
-
                     Limited knowledge may be understood as a
                     structural consequence of constrained access,
                     rather than simply as an absence of information.
-
                 </p>
-
             </div>
-
-
             <div class="card">
-
                 <h3>
                     Ego
                 </h3>
-
                 <p>
-
                     The sense of a persistent self may arise from
                     the continuity and recurrence of a particular
                     constraint configuration.
-
                 </p>
-
             </div>
-
-
             <div class="card">
-
                 <h3>
                     Suffering
                 </h3>
-
                 <p>
-
                     Persistent suffering may be interpreted in
                     terms of recurrent or restrictive patterns
                     within the organisation of experience.
-
                 </p>
-
             </div>
-
-
         </div>
-
     </div>
-
 </section>
-
-
-<!-- 05 MORTALITY -->
-
+<!-- =====================================================
+     05 MORTALITY
+===================================================== -->
 <section id="mortality">
-
     <div class="container">
-
         <div class="section-header">
-
             <div class="section-number">
                 05 / MORTALITY
             </div>
-
             <div>
-
                 <h2 class="section-title">
                     Death and the aperture
                 </h2>
-
                 <p class="section-intro">
-
                     ATA approaches mortality through the distinction
                     between an underlying structure and the
                     particular biological organisation through
                     which experience is accessible.
-
                 </p>
-
             </div>
-
         </div>
-
-
         <div class="mortality">
-
             <h3>
                 The end of a constraint configuration
             </h3>
-
             <p>
-
                 Within ATA, a biological organism functions as a
                 particular aperture through which experience is
                 locally organised. Its memories, perceptions,
                 bodily states and sense of continuity arise within
                 that configuration of constraints.
-
             </p>
-
             <p>
-
                 Death marks the termination of that particular
                 biological organisation. In this sense, what ends
                 is the organism's particular mode of constrained
                 access.
-
             </p>
-
             <p>
-
                 If an eternalist conception of spacetime is adopted,
                 the events constituting that life do not need to be
                 understood as disappearing from the underlying
                 structure merely because the biological process
                 that instantiated the aperture has ended.
-
             </p>
-
             <div class="mortality-highlight">
-
                 Death, in this interpretation, is not necessarily
                 the disappearance of a life from reality, but the
                 termination of the particular conditions through
                 which that life was experienced.
-
             </div>
-
             <p>
-
                 This does not by itself establish survival of
                 consciousness after death. ATA therefore treats
                 questions concerning post-mortem awareness as
                 separate from the claim that events may remain
                 structurally present within an eternalist model.
-
             </p>
-
         </div>
-
     </div>
-
 </section>
-
-
-<!-- 06 OPEN QUESTIONS -->
-
+<!-- =====================================================
+     06 OPEN QUESTIONS
+===================================================== -->
 <section id="questions">
-
     <div class="container">
-
         <div class="section-header">
-
             <div class="section-number">
                 06 / OPEN QUESTIONS
             </div>
-
             <div>
-
                 <h2 class="section-title">
                     Limits and open questions
                 </h2>
-
                 <p class="section-intro">
-
                     ATA remains a developing theoretical framework.
                     Its concepts raise mathematical, philosophical
                     and conceptual questions that remain open.
-
                 </p>
-
             </div>
-
         </div>
-
-
         <div class="limit-list">
-
-
             <div class="limit">
-
                 <strong>
                     Mathematical definition
                 </strong>
-
                 <p>
-
                     Can the aperture, constraint and accessibility
                     concepts be given rigorous mathematical definitions?
-
                 </p>
-
             </div>
-
-
             <div class="limit">
-
                 <strong>
                     Formal structure
                 </strong>
-
                 <p>
-
                     What mathematical setting is most appropriate
                     for representing the relationship between
                     M, C(t), A<sub>C</sub> and E(t)?
-
                 </p>
-
             </div>
-
-
             <div class="limit">
-
                 <strong>
                     Recursive organisation
                 </strong>
-
                 <p>
-
                     Can recursive constraint organisation be
                     represented without relying on circular
                     definitions?
-
                 </p>
-
             </div>
-
-
             <div class="limit">
-
                 <strong>
                     Relationship to existing theories
                 </strong>
-
                 <p>
-
                     How does ATA relate to existing approaches
                     to consciousness, information, dynamical
                     systems and spacetime?
-
                 </p>
-
             </div>
-
-
             <div class="limit">
-
                 <strong>
                     Scope
                 </strong>
-
                 <p>
-
                     Which aspects of ATA belong to formal
                     mathematics, which are theoretical hypotheses,
                     and which remain philosophical interpretation?
-
                 </p>
-
             </div>
-
-
         </div>
-
     </div>
-
 </section>
-
-
-<!-- 07 DEVELOPMENT -->
-
+<!-- =====================================================
+     07 DEVELOPMENT
+===================================================== -->
 <section>
-
     <div class="container">
-
         <div class="section-header">
-
             <div class="section-number">
                 07 / DEVELOPMENT
             </div>
-
             <div>
-
                 <h2 class="section-title">
                     Developing the framework
                 </h2>
-
                 <p class="section-intro">
-
                     The continuing development of ATA involves
                     clarifying its concepts, examining their
                     mathematical structure and determining which
                     aspects of the framework can withstand
                     critical examination.
-
                 </p>
-
             </div>
-
         </div>
-
-
         <div class="thesis-box">
-
             <p class="thesis">
-
                 The aim is to determine
-                <span>
+                <em>
                     what the framework can coherently say
-                </span>
+                </em>
                 once its central concepts are made precise.
-
             </p>
-
         </div>
-
     </div>
-
 </section>
-
-
-<!-- 08 AUTHOR -->
-
+<!-- =====================================================
+     08 AUTHOR
+===================================================== -->
 <section id="author">
-
     <div class="container">
-
         <div class="author">
-
             <div>
-
                 <div class="section-number">
                     08 / AUTHOR
                 </div>
-
                 <div class="author-name">
                     Helen Christie
                 </div>
-
             </div>
-
-
             <div class="author-text">
-
                 <p>
-
                     The Aperture Theory of Awareness is an
                     independent theoretical project developed
                     by Helen Christie.
-
                 </p>
-
                 <br>
-
                 <p>
-
                     The project explores the relationship between
                     consciousness, structure, constraint, time
                     and accessibility, with an emphasis on
                     developing a more precise formulation of
                     its central claims.
-
                 </p>
-
                 <br>
-
                 <p>
-
                     Further writing and related philosophical
                     work can be found on Substack.
-
                 </p>
-
-                <br>
-
                 <a
                     class="button secondary"
                     href="https://substack.com/@forbiddenzoot"
@@ -1616,32 +1148,21 @@ footer {
                 >
                     Visit Helen's Substack →
                 </a>
-
             </div>
-
         </div>
-
     </div>
-
 </section>
-
-
 </main>
-
-
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 <footer>
-
     <div class="container footer-inner">
-
         <div class="footer-text">
-
             The Aperture Theory of Awareness
             · Helen Christie · 2026
-
         </div>
-
         <div class="footer-text">
-
             <a
                 class="substack"
                 href="https://substack.com/@forbiddenzoot"
@@ -1649,13 +1170,12 @@ footer {
             >
                 Substack →
             </a>
-
         </div>
-
     </div>
-
 </footer>
-
-
 </body>
 </html>
+
+This is deliberately monochrome now: no blue, purple, gradients that read as colour, or glowing tech aesthetic. The emphasis is on black space, fine grey lines, ivory typography, and the equations.
+
+I think this suits ATA much better — more philosophical, more mysterious, and more like an independent theoretical work than a conventional technology website.
