@@ -1,1094 +1,1120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <meta name="author" content="Helen Christie">
+<meta name="description" content="The Aperture Theory of Awareness (ATA), developed by Helen Christie. A theoretical framework proposing that conscious awareness emerges from recursively organised constraints within spacetime.">
 
-<meta name="description" content="The Aperture Theory of Awareness (ATA), created by Helen Christie, is a philosophical framework exploring awareness, constraint, experience, identity, mortality and spacetime.">
-
-<meta name="keywords" content="Helen Christie, Aperture Theory of Awareness, ATA, consciousness, awareness, philosophy of mind, spacetime, eternalism, philosophy">
-
-<link rel="canonical" href="https://aperturetheoryofawareness.com/">
-
-<meta property="og:title" content="The Aperture Theory of Awareness | Helen Christie">
-<meta property="og:description" content="The Aperture Theory of Awareness is a philosophical framework by Helen Christie exploring awareness, constraint, experience and spacetime.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://aperturetheoryofawareness.com/">
-
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="The Aperture Theory of Awareness | Helen Christie">
-<meta name="twitter:description" content="A philosophical framework exploring awareness, constraint, experience and spacetime. Created by Helen Christie.">
-
-<title>The Aperture Theory of Awareness | Helen Christie</title>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "The Aperture Theory of Awareness",
-  "url": "https://aperturetheoryofawareness.com/",
-  "description": "The Aperture Theory of Awareness, created by Helen Christie, is a philosophical framework exploring awareness, constraint, experience, identity, mortality and spacetime.",
-  "author": {
-    "@type": "Person",
-    "name": "Helen Christie",
-    "url": "https://aperturetheoryofawareness.com/"
-  }
-}
-</script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Helen Christie",
-  "url": "https://aperturetheoryofawareness.com/",
-  "jobTitle": "Creator of The Aperture Theory of Awareness"
-}
-</script>
+<title>The Aperture Theory of Awareness — Helen Christie</title>
 
 <style>
-
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
-
-*{
-box-sizing:border-box;
-margin:0;
-padding:0;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-html{
-scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
 }
 
-body{
-font-family:'DM Sans',sans-serif;
-background:#f4f0e8;
-color:#20221f;
-line-height:1.7;
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #111;
+    color: #e9e9e9;
+    line-height: 1.7;
 }
 
-nav{
-position:sticky;
-top:0;
-z-index:100;
-background:rgba(244,240,232,.96);
-backdrop-filter:blur(12px);
-border-bottom:1px solid #d8d0c3;
-padding:18px 6%;
-display:flex;
-justify-content:space-between;
-align-items:center;
+a {
+    color: inherit;
+    text-decoration: none;
 }
 
-.logo{
-font-family:'Playfair Display',serif;
-font-weight:600;
-font-size:19px;
-letter-spacing:.5px;
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(17,17,17,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #2b2b2b;
 }
 
-nav a{
-color:#333;
-text-decoration:none;
-margin-left:25px;
-font-size:14px;
-transition:opacity .2s;
+.nav-inner {
+    max-width: 1100px;
+    margin: auto;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-nav a:hover{
-opacity:.55;
+.logo {
+    font-size: 15px;
+    letter-spacing: 2px;
+    font-weight: 600;
 }
 
-.hero{
-min-height:88vh;
-display:flex;
-align-items:center;
-padding:80px 8%;
-position:relative;
-overflow:hidden;
+.nav-links {
+    display: flex;
+    gap: 22px;
+    font-size: 13px;
+    color: #aaa;
 }
 
-.hero-content{
-max-width:900px;
-position:relative;
-z-index:2;
+.nav-links a:hover {
+    color: white;
 }
 
-.eyebrow{
-text-transform:uppercase;
-letter-spacing:3px;
-font-size:12px;
-font-weight:700;
-margin-bottom:25px;
-opacity:.65;
+.hero {
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 24px;
+    border-bottom: 1px solid #292929;
 }
 
-h1,h2,h3{
-font-family:'Playfair Display',serif;
-font-weight:600;
-line-height:1.15;
+.hero-content {
+    max-width: 900px;
 }
 
-h1{
-font-size:clamp(48px,8vw,94px);
-max-width:900px;
-margin-bottom:25px;
-letter-spacing:-1.5px;
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 25px;
 }
 
-.subtitle{
-font-size:clamp(20px,3vw,30px);
-max-width:700px;
-margin-bottom:25px;
-color:#55564f;
+h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(44px, 8vw, 82px);
+    line-height: 1.05;
+    font-weight: 400;
+    margin-bottom: 28px;
 }
 
-.author{
-font-size:15px;
-letter-spacing:1px;
+.hero-subtitle {
+    max-width: 720px;
+    margin: auto;
+    font-family: Georgia, serif;
+    font-size: clamp(19px, 3vw, 26px);
+    color: #c7c7c7;
 }
 
-.orb{
-position:absolute;
-width:500px;
-height:500px;
-border-radius:50%;
-right:-170px;
-top:50%;
-transform:translateY(-50%);
-background:radial-gradient(circle at 35% 30%,#ffffff,#d9d1c3 55%,#bcb3a5);
-opacity:.55;
+.hero-equation {
+    margin-top: 55px;
+    font-family: Georgia, serif;
+    font-size: clamp(30px, 6vw, 58px);
+    color: #fff;
 }
 
-section{
-padding:100px 8%;
-max-width:1200px;
-margin:auto;
+section {
+    max-width: 1000px;
+    margin: auto;
+    padding: 100px 24px;
+    border-bottom: 1px solid #292929;
 }
 
-.section-label{
-text-transform:uppercase;
-letter-spacing:3px;
-font-size:12px;
-font-weight:700;
-opacity:.55;
-margin-bottom:20px;
+.section-number {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #777;
+    margin-bottom: 12px;
 }
 
-h2{
-font-size:clamp(36px,5vw,58px);
-margin-bottom:30px;
+h2 {
+    font-family: Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(32px, 5vw, 48px);
+    margin-bottom: 30px;
 }
 
-h3{
-font-size:28px;
-margin-bottom:15px;
+h3 {
+    font-family: Georgia, serif;
+    font-size: 25px;
+    font-weight: 400;
+    margin: 40px 0 15px;
 }
 
-.lead{
-font-size:21px;
-max-width:850px;
-margin-bottom:35px;
+p {
+    font-size: 17px;
+    color: #c9c9c9;
+    margin-bottom: 20px;
 }
 
-p{
-margin-bottom:20px;
+.lead {
+    font-family: Georgia, serif;
+    font-size: 23px;
+    line-height: 1.6;
+    color: #eee;
 }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-margin-top:45px;
+ul {
+    margin: 20px 0 25px 25px;
+    color: #c9c9c9;
 }
 
-.card{
-background:#ebe5da;
-padding:32px;
-border:1px solid #d8d0c3;
-border-radius:6px;
+li {
+    margin-bottom: 10px;
 }
 
-.card h3{
-font-size:25px;
+.equation-box {
+    margin: 35px 0;
+    padding: 35px 25px;
+    background: #181818;
+    border: 1px solid #303030;
+    border-radius: 6px;
+    text-align: center;
+    overflow-x: auto;
 }
 
-.equation-wrap{
-margin:60px 0;
+.equation {
+    font-family: Georgia, serif;
+    font-size: clamp(22px, 4vw, 34px);
+    color: #f1f1f1;
+    white-space: nowrap;
 }
 
-.equation-label{
-text-align:center;
-text-transform:uppercase;
-letter-spacing:2px;
-font-size:11px;
-font-weight:700;
-opacity:.6;
-margin-bottom:10px;
+.equation-small {
+    font-family: Georgia, serif;
+    font-size: clamp(18px, 3vw, 26px);
+    color: #ddd;
 }
 
-.equation{
-padding:45px 25px;
-background:#20221f;
-color:#f4f0e8;
-text-align:center;
-font-family:'Playfair Display',serif;
-font-size:clamp(24px,4vw,42px);
-letter-spacing:.5px;
-border-radius:4px;
+.definition {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid #292929;
 }
 
-.equation-note{
-text-align:center;
-font-size:13px;
-max-width:720px;
-margin:15px auto 0;
-opacity:.65;
+.definition-symbol {
+    font-family: Georgia, serif;
+    font-size: 25px;
+    color: white;
 }
 
-blockquote{
-border-left:3px solid #777064;
-padding:20px 30px;
-font-family:'Playfair Display',serif;
-font-size:25px;
-margin:40px 0;
+.definition-text {
+    color: #bbb;
 }
 
-.author-box{
-background:#e5dfd3;
-padding:45px;
-margin-top:35px;
-border:1px solid #d8d0c3;
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 35px;
 }
 
-.substack-card{
-margin-top:35px;
-padding:35px;
-border:1px solid #d8d0c3;
-border-radius:8px;
-background:#ebe5da;
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:30px;
+.card {
+    background: #181818;
+    border: 1px solid #2d2d2d;
+    padding: 28px;
+    border-radius: 6px;
 }
 
-.substack-card h3{
-margin:8px 0 12px;
-font-size:28px;
+.card h3 {
+    margin-top: 0;
+    font-size: 22px;
 }
 
-.substack-card p{
-max-width:700px;
-margin-bottom:0;
+.card p {
+    font-size: 15px;
+    margin-bottom: 0;
 }
 
-.substack-card a{
-display:inline-block;
-white-space:nowrap;
-padding:12px 20px;
-border-radius:999px;
-background:#20221f;
-color:#f4f0e8;
-text-decoration:none;
-font-size:14px;
-font-weight:600;
-transition:opacity .2s;
+.highlight {
+    margin: 40px 0;
+    padding: 30px;
+    border-left: 2px solid #aaa;
+    background: #171717;
 }
 
-.substack-card a:hover{
-opacity:.75;
+.highlight p {
+    font-family: Georgia, serif;
+    font-size: 21px;
+    color: #e4e4e4;
+    margin: 0;
 }
 
-.academic-note{
-margin-top:40px;
-padding:25px 30px;
-border-left:3px solid #777064;
-background:rgba(255,255,255,.28);
-font-size:14px;
+.axiom {
+    padding: 24px 0;
+    border-bottom: 1px solid #292929;
 }
 
-.version{
-margin-top:25px;
-font-size:12px;
-letter-spacing:1px;
-opacity:.55;
+.axiom strong {
+    color: white;
 }
 
-footer{
-padding:70px 8%;
-background:#20221f;
-color:#f4f0e8;
-text-align:center;
+.footer {
+    max-width: 1000px;
+    margin: auto;
+    padding: 70px 24px;
+    text-align: center;
 }
 
-footer p{
-opacity:.7;
+.footer-title {
+    font-family: Georgia, serif;
+    font-size: 28px;
+    margin-bottom: 15px;
 }
 
-.footer-title{
-font-family:'Playfair Display',serif;
-font-size:22px;
-margin-bottom:10px;
-opacity:1;
+.footer p {
+    font-size: 14px;
+    color: #777;
 }
 
-@media(max-width:700px){
+@media (max-width: 700px) {
 
-nav{
-padding:15px 5%;
+    .nav-links {
+        display: none;
+    }
+
+    section {
+        padding: 70px 20px;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .definition {
+        grid-template-columns: 70px 1fr;
+        gap: 12px;
+    }
+
+    p {
+        font-size: 16px;
+    }
 }
-
-nav a{
-margin-left:12px;
-font-size:12px;
-}
-
-.hero{
-padding:65px 7%;
-min-height:80vh;
-}
-
-.orb{
-width:300px;
-height:300px;
-right:-180px;
-opacity:.3;
-}
-
-section{
-padding:70px 7%;
-}
-
-.card{
-padding:25px;
-}
-
-.author-box{
-padding:30px;
-}
-
-.substack-card{
-display:block;
-padding:28px;
-}
-
-.substack-card a{
-margin-top:25px;
-}
-
-}
-
 </style>
-
 </head>
 
 <body>
 
 <nav>
+    <div class="nav-inner">
+        <div class="logo">ATA</div>
 
-<div class="logo">ATA</div>
-
-<div>
-<a href="#thesis">Thesis</a>
-<a href="#framework">Framework</a>
-<a href="#implications">Implications</a>
-<a href="#mortality">Mortality</a>
-<a href="#references">References</a>
-<a href="#author">Author</a>
-</div>
-
+        <div class="nav-links">
+            <a href="#thesis">Thesis</a>
+            <a href="#framework">Framework</a>
+            <a href="#mathematics">Mathematics</a>
+            <a href="#testing">Testing</a>
+            <a href="#implications">Implications</a>
+            <a href="#about">About</a>
+        </div>
+    </div>
 </nav>
 
 
+<!-- HERO -->
+
 <header class="hero">
+    <div class="hero-content">
 
-<div class="hero-content">
+        <div class="eyebrow">
+            A Theory of Conscious Awareness
+        </div>
 
-<div class="eyebrow">
-A philosophical framework by Helen Christie
-</div>
+        <h1>
+            The Aperture Theory<br>
+            of Awareness
+        </h1>
 
-<h1>
-The Aperture Theory of Awareness
-</h1>
+        <p class="hero-subtitle">
+            Conscious awareness emerges from recursively organised constraints.
+        </p>
 
-<div class="subtitle">
-Constraint and the Conditions of Experience
-</div>
+        <div class="hero-equation">
+            E = A<sub>C</sub>(M)
+        </div>
 
-<div class="author">
-Created by Helen Christie
-</div>
-
-</div>
-
-<div class="orb"></div>
-
+    </div>
 </header>
 
 
+<!-- THESIS -->
+
 <section id="thesis">
 
-<div class="section-label">
-01 — Thesis
-</div>
+    <div class="section-number">01 — THESIS</div>
 
-<h2>
-Experience is structured through constraint.
-</h2>
+    <h2>The central proposition</h2>
 
-<p class="lead">
-The Aperture Theory of Awareness proposes that experience is not generated by time or consciousness, but structured through constraint.
-</p>
+    <p class="lead">
+        The Aperture Theory of Awareness proposes that conscious experience
+        is not necessarily produced by the brain as an isolated object,
+        but emerges through the way a system constrains access to an
+        underlying spacetime structure.
+    </p>
 
-<p>
-All moments exist within a unified spacetime structure, yet experience appears sequential, personal, and bounded because access to this structure is locally constrained.
-</p>
+    <p>
+        ATA begins with the possibility that reality can be understood as
+        a unified four-dimensional structure. Within such a structure,
+        what we experience as the passage of time may arise from the
+        particular constraints governing access to different regions
+        of that structure.
+    </p>
 
-<p>
-Biological organisms function as apertures through which awareness becomes temporally and perspectivally localised.
-</p>
+    <p>
+        A biological organism therefore functions as an
+        <em>aperture</em>: a constrained mode through which a portion of
+        the underlying structure becomes locally accessible.
+    </p>
 
-<p>
-Time, identity, and continuity are therefore not necessarily features of reality itself, but features of how experience is organised under constraint.
-</p>
-
-<div class="equation-wrap">
-
-<div class="equation-label">
-Conceptual formulation
-</div>
-
-<div class="equation">
-Experience = Access to Block × Constraint
-</div>
-
-<p class="equation-note">
-This notation is a conceptual formulation introduced by ATA. It is not presented as an established scientific or mathematical equation.
-</p>
-
-</div>
+    <div class="highlight">
+        <p>
+            The brain does not necessarily create reality.
+            It may instead determine the form, limits and organisation
+            through which reality becomes experience.
+        </p>
+    </div>
 
 </section>
 
+
+<!-- FRAMEWORK -->
 
 <section id="framework">
 
-<div class="section-label">
-02 — Framework
-</div>
+    <div class="section-number">02 — STRUCTURAL FRAMEWORK</div>
 
-<h2>
-The aperture
-</h2>
+    <h2>From spacetime to experience</h2>
 
-<p class="lead">
-ATA begins with a simple question: if all moments exist within spacetime, why does experience appear to move through time one moment at a time?
-</p>
+    <p>
+        ATA distinguishes between the underlying structure of reality and
+        the particular access conditions through which that structure
+        becomes conscious experience.
+    </p>
 
-<div class="grid">
+    <div class="definition">
+        <div class="definition-symbol">M</div>
+        <div class="definition-text">
+            <strong>Spacetime structure.</strong><br>
+            The underlying four-dimensional structure within which events
+            are located.
+        </div>
+    </div>
 
-<div class="card">
+    <div class="definition">
+        <div class="definition-symbol">C</div>
+        <div class="definition-text">
+            <strong>Constraint.</strong><br>
+            The conditions that restrict, organise and structure what a
+            system can access.
+        </div>
+    </div>
 
-<h3>
-Eternalism
-</h3>
+    <div class="definition">
+        <div class="definition-symbol">A</div>
+        <div class="definition-text">
+            <strong>Aperture.</strong><br>
+            The transformation that maps a constrained region of the
+            underlying structure into an experienced state.
+        </div>
+    </div>
 
-<p>
-The theory begins from an eternalist conception of spacetime. Past, present, and future events can be understood as equally existing within a unified four-dimensional structure rather than as reality continuously coming into existence.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>
-Access
-</h3>
-
-<p>
-Access describes the conditions under which a portion of spacetime becomes phenomenally present as experience. It is not proposed as a substance, faculty, or separate entity.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>
-Constraint
-</h3>
-
-<p>
-Experience is limited to a particular perspective, temporal position, sensory configuration, memory structure, and biological organisation. These constraints make experience local, coherent, and sequential.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>
-The aperture
-</h3>
-
-<p>
-A biological organism functions as an aperture through which awareness becomes locally organised. The aperture does not necessarily create awareness; it determines the conditions under which awareness is experienced.
-</p>
-
-</div>
-
-</div>
-
-
-<blockquote>
-If the whole of spacetime already exists, the central mystery is not why time exists, but why experience is confined to a particular temporal perspective.
-</blockquote>
-
-
-<h3>
-The film-reel analogy
-</h3>
-
-<p>
-Imagine a complete film reel containing every frame of a story. The reel represents the complete spacetime structure. A projector does not create the frames. It determines which frame becomes present to the viewer and how the sequence is experienced.
-</p>
-
-<p>
-In ATA, biological organisation plays an analogous role. Experience appears as a continuous present because access is constrained to a local sequence.
-</p>
+    <div class="definition">
+        <div class="definition-symbol">E</div>
+        <div class="definition-text">
+            <strong>Experience.</strong><br>
+            The locally accessible organisation of the underlying structure
+            as presented through a particular aperture.
+        </div>
+    </div>
 
 </section>
 
+
+<!-- CONSTRAINT -->
 
 <section>
 
-<div class="section-label">
-03 — Structure
-</div>
+    <div class="section-number">03 — CONSTRAINT</div>
 
-<h2>
-Awareness without becoming an object
-</h2>
+    <h2>Constraint as the organising principle</h2>
 
-<p class="lead">
-ATA does not require awareness to be treated as a physical object, substance, or independent observer.
-</p>
+    <p>
+        In ATA, consciousness is not defined simply by the presence of
+        information or neural activity. The organisation of constraint
+        becomes fundamental.
+    </p>
 
-<p>
-Awareness is described minimally as the condition under which experience appears. The theory therefore remains neutral regarding its ultimate ontology. Awareness might ultimately be physical, emergent, irreducible, or otherwise constituted.
-</p>
+    <p>
+        A system is an aperture because its physical and informational
+        structure determines which states can influence one another,
+        which information can become available, and how those states are
+        ordered.
+    </p>
 
-<p>
-ATA is primarily a structural proposal: it asks how experience could be organised if spacetime is already complete.
-</p>
+    <div class="equation-box">
+        <div class="equation">
+            A(t) = A<sub>C(t)</sub>
+        </div>
+    </div>
 
-<div class="grid">
-
-<div class="card">
-
-<h3>
-Situated structure
-</h3>
-
-<p>
-Experience is structured by position. A particular biological configuration determines a particular perspective and temporal localisation.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>
-Individuation
-</h3>
-
-<p>
-Different organisms can function as distinct apertures into a shared spacetime structure without requiring separate fundamental substances of awareness.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>
-Ignorance
-</h3>
-
-<p>
-The limitation of access is not merely a defect in knowledge. It is part of what makes distinction, novelty, meaning, and perspective possible.
-</p>
-
-</div>
-
-</div>
+    <p>
+        The aperture therefore changes as the constraint state changes.
+        Experience is consequently dynamic rather than static.
+    </p>
 
 </section>
 
+
+<!-- INDIVIDUATION -->
+
+<section>
+
+    <div class="section-number">04 — INDIVIDUATION</div>
+
+    <h2>Why experience becomes individual</h2>
+
+    <p>
+        If the underlying structure is shared, why does experience appear
+        to belong to separate individuals?
+    </p>
+
+    <p>
+        ATA proposes that individuality can arise from differences in
+        constraint rather than requiring the underlying structure itself
+        to be divided into completely separate realities.
+    </p>
+
+    <div class="equation-box">
+        <div class="equation">
+            C<sub>1</sub> ≠ C<sub>2</sub>
+            &nbsp;⇒&nbsp;
+            A<sub>C1</sub> ≠ A<sub>C2</sub>
+            &nbsp;⇒&nbsp;
+            E<sub>1</sub> ≠ E<sub>2</sub>
+        </div>
+    </div>
+
+    <p>
+        Two organisms may therefore occupy the same underlying spacetime
+        structure while experiencing different local organisations of it.
+    </p>
+
+    <p>
+        The distinction between individuals is consequently a distinction
+        of access, organisation and constraint.
+    </p>
+
+</section>
+
+
+<!-- RECURSION -->
+
+<section>
+
+    <div class="section-number">05 — RECURSIVE CONSTRAINT</div>
+
+    <h2>Constraint within constraint</h2>
+
+    <p>
+        ATA proposes that constraints can themselves be organised by
+        higher-order constraints.
+    </p>
+
+    <p>
+        This produces a recursive architecture in which one level of
+        organisation constrains another.
+    </p>
+
+    <div class="equation-box">
+        <div class="equation">
+            C<sup>(k+1)</sup> = F<sub>k</sub>(C<sup>(k)</sup>)
+        </div>
+    </div>
+
+    <p>
+        The result is a hierarchy in which local constraints can emerge
+        from larger organisational structures.
+    </p>
+
+    <div class="card-grid">
+
+        <div class="card">
+            <h3>Physical</h3>
+            <p>
+                Physical structures constrain the states available to a
+                biological system.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Biological</h3>
+            <p>
+                Biological organisation constrains sensory, cognitive and
+                behavioural access.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Cognitive</h3>
+            <p>
+                Cognitive structures constrain which representations and
+                possibilities become available.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Experiential</h3>
+            <p>
+                The resulting hierarchy determines the organisation of
+                conscious experience.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MATHEMATICS -->
+
+<section id="mathematics">
+
+    <div class="section-number">06 — MATHEMATICAL FORMALISATION</div>
+
+    <h2>A formal description of ATA</h2>
+
+    <p>
+        ATA can be represented mathematically by treating spacetime,
+        constraint states, apertures and experience as related variables
+        within a formal system.
+    </p>
+
+
+    <h3>1. Spacetime</h3>
+
+    <p>
+        Let the underlying spacetime structure be represented by
+        <strong>M</strong>, with coordinates:
+    </p>
+
+    <div class="equation-box">
+        <div class="equation">
+            x<sup>μ</sup> = (t, x, y, z)
+        </div>
+    </div>
+
+
+    <h3>2. Constraint state</h3>
+
+    <p>
+        A system's constraint state can be represented as a vector:
+    </p>
+
+    <div class="equation-box">
+        <div class="equation">
+            C(t) = (C<sub>1</sub>, C<sub>2</sub>, ..., C<sub>n</sub>)
+        </div>
+    </div>
+
+
+    <h3>3. Constraint dynamics</h3>
+
+    <p>
+        The constraint state may evolve according to:
+    </p>
+
+    <div class="equation-box">
+        <div class="equation">
+            dC/dt = F(C, u, t)
+        </div>
+    </div>
+
+    <p>
+        Here, <strong>u</strong> represents external or internal inputs
+        capable of changing the constraint state.
+    </p>
+
+
+    <h3>4. Aperture</h3>
+
+    <p>
+        The aperture is defined by the current constraint configuration:
+    </p>
+
+    <div class="equation-box">
+        <div class="equation">
+            A(t) = A<sub>C(t)</sub>
+        </div>
+    </div>
+
+
+    <h3>5. Experience</h3>
+
+    <p>
+        Conscious experience is represented as the result of applying the
+        aperture to the underlying structure:
+    </p>
+
+    <div class="equation-box">
+        <div class="equation">
+            E(t) = A<sub>C(t)</sub>(M)
+        </div>
+    </div>
+
+
+    <h3>6. Accessibility</h3>
+
+    <p>
+        The accessibility of a region of spacetime can be represented by
+        a function α:
+    </p>
+
+    <div class="equation-box">
+        <div class="equation">
+            α<sub>i</sub>(x,t) = F(x,t,C<sub>i</sub>(t))
+        </div>
+    </div>
+
+    <p>
+        An accessibility-weighted representation of experience can then
+        be expressed as:
+    </p>
+
+    <div class="equation-box">
+        <div class="equation-small">
+            E<sub>i</sub>(t)
+            =
+            ∫<sub>M</sub>
+            α<sub>i</sub>(x,t) Ψ(x) d<sup>4</sup>x
+        </div>
+    </div>
+
+
+    <h3>7. Recursive organisation</h3>
+
+    <p>
+        The hierarchy of constraints can be represented recursively:
+    </p>
+
+    <div class="equation-box">
+        <div class="equation">
+            C<sup>(k+1)</sup> = F<sub>k</sub>(C<sup>(k)</sup>)
+        </div>
+    </div>
+
+
+    <h3>8. Conscious organisation</h3>
+
+    <p>
+        If the organisation of consciousness depends on the structure of
+        recursive constraint, this relationship can be represented by:
+    </p>
+
+    <div class="equation-box">
+        <div class="equation">
+            Φ(E) = f(R(C))
+        </div>
+    </div>
+
+    <p>
+        Here, <strong>R(C)</strong> represents a measure of recursive
+        constraint organisation and <strong>Φ(E)</strong> represents a
+        measure of conscious organisation.
+    </p>
+
+
+    <h3>9. Temporal organisation</h3>
+
+    <p>
+        ATA further proposes that experienced temporal organisation may
+        depend upon the structure and rate of change of constraint:
+    </p>
+
+    <div class="equation-box">
+        <div class="equation-small">
+            τ<sub>A</sub>
+            =
+            g(R(C), ||dC/dt||, C)
+        </div>
+    </div>
+
+    <p>
+        This provides a possible mathematical route for investigating
+        whether differences in constraint dynamics correspond to
+        differences in temporal experience.
+    </p>
+
+</section>
+
+
+<!-- TESTING -->
+
+<section id="testing">
+
+    <div class="section-number">07 — TESTING ATA</div>
+
+    <h2>From formal model to empirical question</h2>
+
+    <p>
+        A mathematical formulation becomes scientifically useful when it
+        generates predictions that can be compared with observations.
+    </p>
+
+    <h3>Prediction 1 — Organisation over activity</h3>
+
+    <p>
+        ATA predicts that conscious organisation may depend not simply on
+        the amount of activity within a system, but on the architecture
+        of its constraints.
+    </p>
+
+    <div class="equation-box">
+        <div class="equation-small">
+            N<sub>1</sub> ≈ N<sub>2</sub>
+            &nbsp;&nbsp;and&nbsp;&nbsp;
+            R(C<sub>1</sub>) ≠ R(C<sub>2</sub>)
+            <br><br>
+            ⇒
+            <br><br>
+            Φ(E<sub>1</sub>) ≠ Φ(E<sub>2</sub>)
+        </div>
+    </div>
+
+    <p>
+        In other words, two systems could display similar overall levels
+        of activity while differing in the organisation of their
+        conscious states because their constraint architectures differ.
+    </p>
+
+
+    <h3>Prediction 2 — Constraint dynamics and temporal experience</h3>
+
+    <p>
+        If temporal organisation depends partly on changing constraints,
+        alterations in constraint dynamics should correspond to measurable
+        changes in temporal organisation.
+    </p>
+
+    <div class="equation-box">
+        <div class="equation">
+            ||dC/dt|| → τ<sub>A</sub>
+        </div>
+    </div>
+
+
+    <h3>Potential falsification</h3>
+
+    <p>
+        ATA would be challenged if recursive constraint organisation could
+        not be shown to have any systematic relationship with conscious
+        organisation under appropriately controlled conditions.
+    </p>
+
+    <p>
+        The theory therefore places emphasis on identifying measurable
+        quantities for constraint, recursion and conscious organisation.
+    </p>
+
+</section>
+
+
+<!-- APERTURES -->
+
+<section>
+
+    <div class="section-number">08 — APERTURES IN NATURE</div>
+
+    <h2>The aperture as a general structure</h2>
+
+    <p>
+        ATA uses the aperture concept to describe systems whose structure
+        determines the range and organisation of states accessible to them.
+    </p>
+
+    <div class="card-grid">
+
+        <div class="card">
+            <h3>Organisms</h3>
+            <p>
+                Biological organisms provide highly structured pathways
+                through which information becomes locally available.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Nervous systems</h3>
+            <p>
+                Neural architecture constrains which signals interact and
+                how information becomes globally organised.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Cognitive systems</h3>
+            <p>
+                Attention, memory and expectation further constrain the
+                structure of experience.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Nested systems</h3>
+            <p>
+                Constraints can exist within larger constraints, producing
+                recursively organised structures.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- IMPLICATIONS -->
 
 <section id="implications">
 
-<div class="section-label">
-04 — Implications
-</div>
+    <div class="section-number">09 — IMPLICATIONS</div>
 
-<h2>
-What follows from constrained access?
-</h2>
+    <h2>What follows from the framework?</h2>
 
-<div class="grid">
+    <h3>Time</h3>
 
-
-<div class="card">
-
-<h3>
-Choice
-</h3>
-
-<p>
-If multiple possible continuations can be represented within a larger spacetime description, choice can be understood as localisation to a particular trajectory rather than creation of reality from nothing.
-</p>
-
-</div>
+    <p>
+        If spacetime is fundamentally four-dimensional, temporal
+        succession may describe the structure of access rather than the
+        complete structure of reality itself.
+    </p>
 
 
-<div class="card">
+    <h3>Selfhood</h3>
 
-<h3>
-Synchronicity
-</h3>
-
-<p>
-Events that appear meaningfully coincidental may be understood as structurally related elements becoming simultaneously accessible, without requiring direct causal influence.
-</p>
-
-</div>
+    <p>
+        The individual self can be understood as a stable organisation
+        produced by biological and informational constraints.
+    </p>
 
 
-<div class="card">
+    <h3>Ignorance</h3>
 
-<h3>
-Recursive constraint
-</h3>
-
-<p>
-Biological organisation contains nested levels of structure, from molecules and cells through tissues, organs, and organisms. Localisation can therefore be understood as emerging through hierarchical constraint.
-</p>
-
-</div>
+    <p>
+        Ignorance is not necessarily a failure of awareness. It can be a
+        structural consequence of being a locally constrained aperture.
+    </p>
 
 
-<div class="card">
+    <h3>Suffering</h3>
 
-<h3>
-Relational access
-</h3>
-
-<p>
-Other beings are encountered through their own apertures. Perspective is therefore inherently relational, with each aperture revealing and limiting what can be experienced.
-</p>
-
-</div>
+    <p>
+        Suffering may arise partly from the way consciousness becomes
+        constrained around particular states, memories, expectations and
+        models of self.
+    </p>
 
 
-<div class="card">
+    <h3>Death</h3>
 
-<h3>
-Ego
-</h3>
-
-<p>
-The ego can be understood as a temporal structure connecting memory, anticipation, and the demand for continued localisation.
-</p>
-
-</div>
+    <p>
+        Within an eternalist interpretation, death represents the ending
+        of a particular biological constraint configuration rather than
+        necessarily the destruction of the underlying spacetime events
+        that constituted that life.
+    </p>
 
 
-<div class="card">
+    <h3>Awareness and individuality</h3>
 
-<h3>
-Suffering
-</h3>
-
-<p>
-Memory carries previous experience forward, anticipation projects possible experience ahead, and narrative integrates both. This continuity allows suffering to persist through time.
-</p>
-
-</div>
-
-</div>
+    <p>
+        ATA allows individuality to be understood without requiring the
+        underlying structure of reality to consist of fundamentally
+        isolated experiential substances.
+    </p>
 
 </section>
 
+
+<!-- AXIOMS -->
 
 <section>
 
-<div class="section-label">
-05 — Knowledge
-</div>
+    <div class="section-number">10 — AXIOMS</div>
 
-<h2>
-The limits of the aperture
-</h2>
+    <h2>Core principles</h2>
 
-<p class="lead">
-A central implication of ATA is that limitation is not necessarily opposed to knowledge. Limitation may be what makes knowledge possible.
-</p>
+    <div class="axiom">
+        <strong>I. Unified structure</strong>
+        <p>
+            Reality may be represented as a unified spacetime structure
+            within which events are located.
+        </p>
+    </div>
 
-<p>
-Because an aperture cannot access every position and perspective simultaneously, distinctions arise. The world appears as something encountered rather than something completely possessed.
-</p>
+    <div class="axiom">
+        <strong>II. Constraint</strong>
+        <p>
+            Access to this structure is locally constrained.
+        </p>
+    </div>
 
-<p>
-The same constraint that produces ignorance also produces perspective, identity, sequence, and meaning.
-</p>
+    <div class="axiom">
+        <strong>III. Aperture</strong>
+        <p>
+            A system functions as an aperture through which constrained
+            regions of the structure become accessible.
+        </p>
+    </div>
 
-<blockquote>
-The central claim of ATA is therefore not that reality is limited, but that experience is.
-</blockquote>
+    <div class="axiom">
+        <strong>IV. Experience</strong>
+        <p>
+            Conscious experience corresponds to the organisation produced
+            by this constrained access.
+        </p>
+    </div>
 
-</section>
+    <div class="axiom">
+        <strong>V. Recursion</strong>
+        <p>
+            Constraints can themselves be organised by higher-order
+            constraints.
+        </p>
+    </div>
 
-
-<section id="mortality">
-
-<div class="section-label">
-06 — Mortality
-</div>
-
-<h2>
-Death as the end of biological localisation
-</h2>
-
-<p class="lead">
-On the minimal ATA account, death is the end of biological localisation.
-</p>
-
-<p>
-A life does not cease to exist within an eternalist spacetime structure simply because the biological system through which it was experienced ceases to function.
-</p>
-
-<p>
-What ends is the particular mechanism through which that life was experienced as a continuously unfolding present.
-</p>
-
-<p>
-This creates an important distinction between the existence of a life and the localisation of awareness to that life.
-</p>
-
-<div class="card">
-
-<h3>
-The unresolved question
-</h3>
-
-<p>
-If all moments of a life exist within spacetime, death may be understood not as the destruction of those moments, but as the dissolution of the biological conditions that made them accessible as a continuous present.
-</p>
-
-</div>
-
-<p style="margin-top:30px">
-
-ATA does not, by itself, establish an afterlife, reincarnation, or the continuation of individual consciousness after biological death. Those possibilities remain philosophical questions beyond the minimal theory.
-
-</p>
+    <div class="axiom">
+        <strong>VI. Individuation</strong>
+        <p>
+            Distinct conscious perspectives arise through differences in
+            constraint and accessibility.
+        </p>
+    </div>
 
 </section>
 
+
+<!-- LIMITATIONS -->
 
 <section>
 
-<div class="section-label">
-07 — Constraint Rather Than Passage
-</div>
+    <div class="section-number">11 — LIMITATIONS</div>
 
-<h2>
-Experience does not need to move through spacetime.
-</h2>
+    <h2>Open questions</h2>
 
-<p class="lead">
-If spacetime is a complete structure, experience may be understood not as travelling through reality, but as becoming locally constrained within it.
-</p>
+    <p>
+        ATA remains a developing theoretical framework. Several elements
+        require further specification before the mathematical structure
+        can become an experimentally testable physical theory.
+    </p>
 
-<p>
-This provides a single conceptual framework for temporal flow, identity, ego, suffering, worldline selection, synchronicity, and mortality.
-</p>
+    <ul>
+        <li>
+            A precise definition of recursive constraint organisation
+            <strong>R(C)</strong>.
+        </li>
 
-<p>
-The aperture may open, narrow, widen, or close, but the underlying spacetime structure is not thereby created or destroyed.
-</p>
+        <li>
+            A measurable formulation of conscious organisation
+            <strong>Φ(E)</strong>.
+        </li>
 
-<div class="equation-wrap">
+        <li>
+            A method for determining the relationship between constraint
+            dynamics and temporal experience.
+        </li>
 
-<div class="equation-label">
-Central ATA principle
-</div>
+        <li>
+            Empirical experiments capable of distinguishing ATA's
+            predictions from competing theories of consciousness.
+        </li>
 
-<div class="equation">
-Awareness becomes experience through constraint.
-</div>
+        <li>
+            A clearer connection between the formal aperture operator and
+            physically measurable systems.
+        </li>
+    </ul>
 
-</div>
+    <p>
+        These questions are part of the continuing development of the
+        theory.
+    </p>
 
 </section>
 
+
+<!-- SUMMARY -->
 
 <section>
 
-<div class="section-label">
-08 — Research Directions
-</div>
+    <div class="section-number">12 — SUMMARY</div>
 
-<h2>
-Questions raised by ATA
-</h2>
+    <h2>The aperture perspective</h2>
 
-<div class="grid">
+    <p class="lead">
+        ATA proposes that consciousness is best understood not simply as
+        something produced by matter, but as an organised mode of access
+        to reality.
+    </p>
 
+    <p>
+        The central relationship can be expressed simply:
+    </p>
 
-<div class="card">
+    <div class="equation-box">
+        <div class="equation">
+            E = A<sub>C</sub>(M)
+        </div>
+    </div>
 
-<h3>
-Philosophy of mind
-</h3>
+    <p>
+        A shared underlying structure becomes distinct experience through
+        the constraints defining a particular aperture.
+    </p>
 
-<p>
-Can a structural theory of access explain the appearance of a unified first-person perspective without treating consciousness as a moving entity?
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>
-Neuroscience
-</h3>
-
-<p>
-Can biological localisation be investigated as a constraint on phenomenological access rather than simply as the production of consciousness?
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>
-Physics
-</h3>
-
-<p>
-How might eternalist interpretations of spacetime interact with theories of information, locality, and observation?
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>
-Phenomenology
-</h3>
-
-<p>
-Can temporal continuity, anticipation, memory, and selfhood be modelled as properties of constrained access?
-</p>
-
-</div>
-
-</div>
+    <p>
+        Consciousness, individuality, temporal experience and the limits
+        of perception can therefore be investigated as consequences of
+        constrained access and recursive organisation.
+    </p>
 
 </section>
 
 
-<section id="references">
+<!-- ABOUT -->
 
-<div class="section-label">
-09 — Intellectual Context
-</div>
+<section id="about">
 
-<h2>
-References and directions for further study
-</h2>
+    <div class="section-number">13 — ABOUT</div>
 
-<p class="lead">
-ATA is an original philosophical proposal developed in dialogue with established questions in philosophy of mind, metaphysics, phenomenology, and the philosophy of spacetime.
-</p>
+    <h2>Helen Christie</h2>
 
-<div class="grid">
+    <p class="lead">
+        The Aperture Theory of Awareness was developed by Helen Christie
+        as an independent theoretical framework for investigating the
+        relationship between consciousness, spacetime and constraint.
+    </p>
 
-
-<div class="card">
-
-<h3>
-Eternalism and spacetime
-</h3>
-
-<p>
-ATA is compatible with philosophical discussions of eternalism and the block-universe conception of spacetime, while developing its own question concerning the localisation of experience.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>
-Philosophy of mind
-</h3>
-
-<p>
-The theory engages with longstanding questions concerning consciousness, subjectivity, first-person experience, personal identity, and the relationship between physical organisation and awareness.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>
-Phenomenology
-</h3>
-
-<p>
-ATA is concerned with the structure of lived temporality, including memory, anticipation, continuity, perspective, and the experienced present.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>
-Physics and metaphysics
-</h3>
-
-<p>
-The theory takes eternalist interpretations of spacetime as a philosophical starting point. It does not claim that current physics has established ATA's interpretation of awareness.
-</p>
-
-</div>
-
-</div>
-
-
-<div class="academic-note">
-
-<strong>Academic status.</strong>
-
-The Aperture Theory of Awareness is a philosophical framework under development. Its central claims are presented as theoretical proposals rather than established scientific findings. References to physics, neuroscience, phenomenology, or philosophy identify areas of relevance and possible investigation; they do not imply that those disciplines currently validate ATA.
-
-</div>
+    <p>
+        ATA brings together questions from philosophy of mind,
+        metaphysics, consciousness studies and theoretical approaches to
+        the structure of reality.
+    </p>
 
 </section>
 
 
-<section id="author">
+<footer class="footer">
 
-<div class="section-label">
-10 — Author
-</div>
+    <div class="footer-title">
+        The Aperture Theory of Awareness
+    </div>
 
-<h2>
-Helen Christie
-</h2>
+    <p>
+        Developed by Helen Christie
+    </p>
 
-
-<div class="author-box">
-
-<p>
-Helen Christie is the creator of <strong>The Aperture Theory of Awareness (ATA)</strong>, a philosophical framework exploring the relationship between awareness, constraint, experience, biological localisation, identity, and spacetime.
-</p>
-
-<p>
-ATA develops an eternalist perspective on experience by asking how a complete spacetime structure could nevertheless produce the appearance of a continuously unfolding personal present.
-</p>
-
-<p>
-The theory's central proposal is that experience is not necessarily generated by temporal passage, but structured through locally constrained access.
-</p>
-
-<p class="version">
-ATA Version 1.0 · Developed by Helen Christie · 2026
-</p>
-
-</div>
-
-
-<div class="substack-card">
-
-<div>
-
-<span class="eyebrow">
-PUBLIC WRITING
-</span>
-
-<h3>
-The Aperture Theory of Awareness on Substack
-</h3>
-
-<p>
-Read Helen Christie's ongoing public writing on the Aperture Theory of Awareness, including essays developing awareness, constraint, spacetime, subjectivity, and experience.
-</p>
-
-</div>
-
-<a href="https://forbiddenzoot.substack.com/" target="_blank" rel="noopener">
-Read on Substack ↗
-</a>
-
-</div>
-
-</section>
-
-
-<section>
-
-<div class="section-label">
-11 — Closing Question
-</div>
-
-<h2>
-If all moments already exist, what is lost at death?
-</h2>
-
-<p class="lead">
-Existence itself, or a specific restriction on experience?
-</p>
-
-<p>
-The Aperture Theory of Awareness leaves this question deliberately open.
-</p>
-
-<p>
-Its minimal claim is narrower: the apparent passage of experience may arise from the way awareness is constrained within an already existing structure of spacetime.
-</p>
-
-</section>
-
-
-<footer>
-
-<p class="footer-title">
-The Aperture Theory of Awareness
-</p>
-
-<p>
-Created by Helen Christie
-</p>
-
-<p>
-© 2026 Helen Christie
-</p>
+    <p>
+        © 2026 Helen Christie
+    </p>
 
 </footer>
 
