@@ -253,7 +253,7 @@ li {
 .footer {
     max-width: 1000px;
     margin: auto;
-    padding: 70px 24px;
+    padding: 80px 24px;
     text-align: center;
 }
 
@@ -266,6 +266,22 @@ li {
 .footer p {
     font-size: 14px;
     color: #777;
+}
+
+.substack-link {
+    display: inline-block;
+    margin-top: 15px;
+    font-family: Georgia, serif;
+    font-size: 18px;
+    color: #ddd;
+    border-bottom: 1px solid #666;
+    padding-bottom: 4px;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.substack-link:hover {
+    color: white;
+    border-color: white;
 }
 
 @media (max-width: 700px) {
@@ -1102,6 +1118,8 @@ li {
 </section>
 
 
+<!-- FOOTER -->
+
 <footer class="footer">
 
     <div class="footer-title">
@@ -1115,6 +1133,15 @@ li {
     <p>
         © 2026 Helen Christie
     </p>
+
+    <a
+        class="substack-link"
+        href="https://substack.com/@forbiddenzoot"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        Read Helen Christie on Substack →
+    </a>
 
 </footer>
 
