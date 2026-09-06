@@ -3,1229 +3,938 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>The Aperture Theory of Awareness — ATA</title>
-
-<meta name="description"
-content="The Aperture Theory of Awareness (ATA): a developing philosophical and mathematical framework proposing that conscious awareness emerges from recursively organised constraints.">
-
-<script>
-window.MathJax = {
-  tex: {
-    inlineMath: [['\\(', '\\)']],
-    displayMath: [['\\[', '\\]']]
-  },
-  svg: {
-    fontCache: 'global'
-  }
-};
-</script>
-
-<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
-
+<meta name="description" content="The Aperture Theory of Awareness (ATA) — a developing theoretical framework proposing that conscious awareness emerges from recursively organised constraints.">
+<meta name="author" content="Helen Christie">
+<title>The Aperture Theory of Awareness</title>
 <style>
-
 :root {
-  --background: #0a0b0d;
-  --surface: #101216;
-  --surface-soft: #14171c;
-  --border: #242830;
-  --text: #eceef1;
-  --muted: #969da7;
-  --soft: #c8cdd4;
-  --max-width: 900px;
+    --bg: #080808;
+    --surface: #101010;
+    --surface-2: #141414;
+    --text: #f2f2f2;
+    --muted: #a2a2a2;
+    --subtle: #686868;
+    --line: #252525;
+    --max: 920px;
 }
-
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
-
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
-
 body {
-  margin: 0;
-  background: var(--background);
-  color: var(--text);
-  font-family:
-    Inter,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Helvetica,
-    Arial,
-    sans-serif;
-  line-height: 1.75;
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Helvetica,
+        Arial,
+        sans-serif;
+    line-height: 1.75;
+    font-size: 16px;
 }
-
 a {
-  color: inherit;
-  text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
-
 nav {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background: rgba(10, 11, 13, 0.9);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(8, 8, 8, 0.94);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
 }
-
 .nav-inner {
-  max-width: 1050px;
-  margin: auto;
-  padding: 15px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
+    max-width: 1100px;
+    margin: auto;
+    padding: 17px 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
 }
-
-.logo {
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+.nav-inner a {
+    color: var(--muted);
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    transition: color 0.2s ease;
 }
-
-.nav-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
+.nav-inner a:hover {
+    color: var(--text);
 }
-
-.nav-links a {
-  color: var(--muted);
-  font-size: 12px;
-}
-
-.nav-links a:hover {
-  color: var(--text);
-}
-
-
-/* MAIN */
-
 main {
-  width: 100%;
+    max-width: var(--max);
+    margin: auto;
+    padding: 0 24px;
 }
-
-
-/* HERO */
-
 .hero {
-  text-align: center;
-  padding: 110px 24px 85px;
-  border-bottom: 1px solid var(--border);
+    text-align: center;
+    padding: 125px 0 105px;
 }
-
-.hero-inner {
-  max-width: 900px;
-  margin: auto;
-}
-
 .eyebrow {
-  color: var(--muted);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  margin-bottom: 24px;
+    text-transform: uppercase;
+    letter-spacing: 0.24em;
+    font-size: 11px;
+    color: var(--subtle);
+    margin-bottom: 28px;
 }
-
 h1 {
-  margin: 0;
-  font-size: clamp(52px, 9vw, 92px);
-  line-height: 0.98;
-  letter-spacing: -0.06em;
-  font-weight: 600;
+    margin: 0;
+    font-size: clamp(42px, 7vw, 78px);
+    line-height: 1.03;
+    letter-spacing: -0.055em;
+    font-weight: 500;
 }
-
+.hero-subtitle {
+    margin: 30px auto 0;
+    max-width: 680px;
+    font-size: clamp(20px, 3vw, 28px);
+    line-height: 1.4;
+    color: #c9c9c9;
+    font-weight: 300;
+}
 .hero-description {
-  max-width: 690px;
-  margin: 32px auto 0;
-  color: var(--soft);
-  font-size: 20px;
+    max-width: 650px;
+    margin: 28px auto 0;
+    color: var(--muted);
+    font-size: 16px;
 }
-
-.hero-status {
-  max-width: 650px;
-  margin: 25px auto 0;
-  color: var(--muted);
-  font-size: 14px;
+.hero-link {
+    display: inline-block;
+    margin-top: 32px;
+    padding: 10px 18px;
+    border: 1px solid var(--line);
+    border-radius: 30px;
+    color: #bdbdbd;
+    font-size: 13px;
+    transition: all 0.2s ease;
 }
-
-
-/* SECTIONS */
-
+.hero-link:hover {
+    border-color: #555;
+    color: #fff;
+    background: var(--surface);
+}
 section {
-  border-bottom: 1px solid var(--border);
+    padding: 92px 0;
+    border-top: 1px solid var(--line);
 }
-
-.section-inner {
-  max-width: var(--max-width);
-  margin: auto;
-  padding: 82px 24px;
+.section-label {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 10px;
+    color: var(--subtle);
+    margin-bottom: 18px;
 }
-
-.section-number {
-  text-align: center;
-  color: var(--muted);
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  margin-bottom: 15px;
-}
-
 h2 {
-  text-align: center;
-  font-size: clamp(34px, 5vw, 52px);
-  line-height: 1.1;
-  letter-spacing: -0.045em;
-  margin: 0 0 32px;
-  font-weight: 600;
+    margin: 0 0 28px;
+    font-size: clamp(28px, 4vw, 42px);
+    line-height: 1.15;
+    font-weight: 500;
+    letter-spacing: -0.03em;
 }
-
 h3 {
-  font-size: 20px;
-  margin: 48px 0 14px;
-  letter-spacing: -0.015em;
+    margin: 42px 0 14px;
+    font-size: 19px;
+    font-weight: 500;
 }
-
 p {
-  max-width: 740px;
-  margin: 0 auto 20px;
-  color: var(--soft);
+    margin: 0 0 20px;
+    color: #c2c2c2;
 }
-
-.lead {
-  font-size: 19px;
-  color: var(--text);
-  text-align: center;
-  max-width: 750px;
+strong {
+    color: var(--text);
+    font-weight: 550;
 }
-
-
 /* THESIS */
-
-.thesis-line {
-  max-width: 760px;
-  margin: 45px auto;
-  padding: 30px 25px;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  text-align: center;
-  font-size: 24px;
-  line-height: 1.4;
+.thesis {
+    text-align: center;
 }
-
-
+.thesis-statement {
+    max-width: 760px;
+    margin: 0 auto;
+    font-size: clamp(25px, 4vw, 38px);
+    line-height: 1.35;
+    color: #ededed;
+    letter-spacing: -0.025em;
+}
 /* FORMULATION */
-
-.formulation-intro {
-  text-align: center;
-  max-width: 760px;
-  margin-bottom: 45px;
+.formulation {
+    margin: 50px auto 32px;
+    padding: 44px 25px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    text-align: center;
 }
-
 .equation {
-  max-width: 820px;
-  margin: 28px auto;
-  padding: 30px 20px;
-  background: #08090b;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  overflow-x: auto;
-  text-align: center;
+    font-family:
+        "Times New Roman",
+        Times,
+        serif;
+    font-size: clamp(31px, 6vw, 55px);
+    color: #f5f5f5;
+    line-height: 1.3;
 }
-
-.equation.large {
-  padding: 38px 20px;
-  font-size: 1.15em;
+.formulation-caption {
+    margin-top: 20px;
+    color: var(--subtle);
+    font-size: 13px;
 }
-
-
-/* DEFINITIONS */
-
+.definition-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    margin-top: 40px;
+    background: var(--line);
+    border: 1px solid var(--line);
+}
 .definition {
-  max-width: 740px;
-  margin: 30px auto;
-  padding: 25px 28px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 10px;
+    background: var(--surface);
+    padding: 25px 20px;
 }
-
-.definition p {
-  margin-bottom: 12px;
+.symbol {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 25px;
+    margin-bottom: 8px;
 }
-
-.definition p:last-child {
-  margin-bottom: 0;
+.definition-title {
+    font-size: 13px;
+    color: #eee;
+    margin-bottom: 7px;
 }
-
-
+.definition-text {
+    color: var(--subtle);
+    font-size: 13px;
+    line-height: 1.55;
+}
+.plain-language {
+    max-width: 720px;
+    margin: 42px auto 0;
+    text-align: center;
+    color: #bcbcbc;
+    font-size: 17px;
+}
+/* MATHEMATICS */
+.math-block {
+    margin: 30px 0;
+    padding: 30px 25px;
+    background: var(--surface);
+    border-left: 2px solid #444;
+    overflow-x: auto;
+}
+.math {
+    font-family:
+        "Times New Roman",
+        Times,
+        serif;
+    font-size: clamp(21px, 4vw, 31px);
+    color: #ededed;
+    text-align: center;
+    white-space: nowrap;
+}
+.note {
+    font-size: 13px;
+    color: var(--subtle);
+    margin-top: 13px;
+}
+/* CARDS */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 35px;
+}
+.card {
+    padding: 27px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    border-radius: 10px;
+}
+.card h3 {
+    margin: 0 0 12px;
+    font-size: 17px;
+}
+.card p {
+    font-size: 14px;
+    margin: 0;
+}
 /* OPEN PROBLEM */
-
 .open-problem {
-  background: var(--surface);
+    text-align: center;
 }
-
-.open-box {
-  max-width: 760px;
-  margin: 40px auto;
-  padding: 35px 30px;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  background: #0c0e11;
-  text-align: center;
+.open-problem .math-block {
+    border: 1px solid var(--line);
+    margin: 35px auto;
+    max-width: 620px;
 }
-
-.open-box p {
-  text-align: center;
+.highlight {
+    border: 1px solid var(--line);
+    background: var(--surface);
+    padding: 30px;
+    margin: 30px 0;
+    border-radius: 10px;
 }
-
-.open-box .equation {
-  border: none;
-  background: transparent;
+.highlight-title {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    margin-bottom: 12px;
 }
-
-
-/* LISTS */
-
-ol,
-ul {
-  max-width: 720px;
-  margin: 30px auto;
-  padding-left: 25px;
-  color: var(--soft);
-}
-
-li {
-  margin-bottom: 14px;
-}
-
-
-/* TESTING */
-
-.test {
-  max-width: 760px;
-  margin: 25px auto;
-  padding: 27px 30px;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  background: var(--surface);
-}
-
-.test-title {
-  font-weight: 600;
-  color: var(--text);
-  margin-bottom: 10px;
-}
-
-.test p {
-  margin-bottom: 0;
-}
-
-
-/* CALLOUT */
-
-.callout {
-  max-width: 760px;
-  margin: 35px auto;
-  padding: 28px;
-  border-left: 2px solid #555b63;
-  background: var(--surface-soft);
-}
-
-.callout p {
-  margin-bottom: 0;
-}
-
-
-/* TAGS */
-
-.tags {
-  text-align: center;
-  max-width: 750px;
-  margin: 30px auto;
-}
-
-.tag {
-  display: inline-block;
-  padding: 6px 12px;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  color: var(--muted);
-  font-size: 12px;
-  margin: 4px;
-}
-
-
-/* FOOTER */
-
-footer {
-  padding: 55px 24px 75px;
-  text-align: center;
-  color: var(--muted);
-  font-size: 13px;
-}
-
-footer p {
-  color: var(--muted);
-  font-size: 13px;
-}
-
-
-/* MOBILE */
-
-@media (max-width: 700px) {
-
-  .nav-inner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .nav-links {
-    gap: 11px;
-  }
-
-  .hero {
-    padding: 80px 20px 65px;
-  }
-
-  .section-inner {
-    padding: 65px 20px;
-  }
-
-  h1 {
-    font-size: 50px;
-  }
-
-  .hero-description {
+/* QUOTE */
+.quote {
+    border-left: 2px solid #444;
+    padding: 5px 0 5px 25px;
+    margin: 35px 0;
+    color: #d1d1d1;
     font-size: 18px;
-  }
-
-  .thesis-line {
-    font-size: 21px;
-  }
-
-  .definition,
-  .test,
-  .callout,
-  .open-box {
-    padding: 24px 20px;
-  }
-
 }
-
+/* LIMITS */
+.limit-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 35px;
+}
+.limit {
+    border: 1px solid var(--line);
+    padding: 25px;
+    background: var(--surface);
+}
+.limit strong {
+    display: block;
+    margin-bottom: 8px;
+}
+.limit span {
+    color: var(--subtle);
+    font-size: 14px;
+}
+/* AUTHOR */
+.author {
+    text-align: center;
+}
+.author-name {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+.author-description {
+    max-width: 650px;
+    margin: 0 auto 28px;
+    color: var(--muted);
+}
+.substack-link {
+    display: inline-block;
+    padding: 13px 23px;
+    border: 1px solid #333;
+    border-radius: 30px;
+    font-size: 14px;
+    color: #ddd;
+    transition: all 0.2s ease;
+}
+.substack-link:hover {
+    background: #151515;
+    border-color: #555;
+    color: white;
+}
+.footer-note {
+    color: var(--subtle);
+    font-size: 13px;
+    max-width: 650px;
+    margin: 25px auto 0;
+}
+/* FOOTER */
+footer {
+    border-top: 1px solid var(--line);
+    padding: 45px 24px;
+    text-align: center;
+    color: var(--subtle);
+    font-size: 12px;
+}
+.footer-substack {
+    display: block;
+    margin-top: 10px;
+    color: #858585;
+}
+.footer-substack:hover {
+    color: #ccc;
+}
+/* MOBILE */
+@media (max-width: 750px) {
+    .nav-inner {
+        gap: 14px;
+    }
+    .hero {
+        padding: 90px 0 80px;
+    }
+    section {
+        padding: 70px 0;
+    }
+    .definition-grid,
+    .cards,
+    .limit-grid {
+        grid-template-columns: 1fr;
+    }
+    .formulation {
+        padding: 32px 15px;
+    }
+    .math-block {
+        padding: 24px 15px;
+    }
+    .math {
+        text-align: left;
+    }
+}
 </style>
 </head>
-
-
 <body>
-
-
 <!-- NAVIGATION -->
-
 <nav>
-  <div class="nav-inner">
-
-    <a href="#top" class="logo">ATA</a>
-
-    <div class="nav-links">
-      <a href="#thesis">Thesis</a>
-      <a href="#formulation">Formalisation</a>
-      <a href="#mathematics">Mathematics</a>
-      <a href="#testing">Testing</a>
-      <a href="#philosophy">Philosophy</a>
-      <a href="#limits">Limits</a>
-      <a href="#about">About</a>
+    <div class="nav-inner">
+        <a href="#thesis">Thesis</a>
+        <a href="#formulation">Formulation</a>
+        <a href="#model">Model</a>
+        <a href="#testing">Testing</a>
+        <a href="#falsification">Falsification</a>
+        <a href="#philosophy">Philosophy</a>
+        <a href="#limits">Limits</a>
+        <a href="#about">About</a>
     </div>
-
-  </div>
 </nav>
-
-
-<main id="top">
-
-
+<main>
 <!-- HERO -->
-
-<section class="hero">
-
-  <div class="hero-inner">
-
-    <div class="eyebrow">
-      The Aperture Theory of Awareness · ATA
-    </div>
-
-    <h1>
-      Awareness as<br>
-      constrained access.
-    </h1>
-
-    <p class="hero-description">
-      A developing philosophical and mathematical framework proposing that
-      conscious awareness emerges from recursively organised constraints.
-    </p>
-
-    <p class="hero-status">
-      ATA is an open theoretical programme. Its mathematical formulation,
-      empirical predictions and philosophical implications remain subject
-      to criticism and revision.
-    </p>
-
-  </div>
-
-</section>
-
-
-
+<header class="hero">
+<div class="eyebrow">
+    A theoretical framework
+</div>
+<h1>
+    The Aperture Theory<br>
+    of Awareness
+</h1>
+<div class="hero-subtitle">
+    Awareness as constrained access.
+</div>
+<p class="hero-description">
+    A developing framework proposing that conscious experience
+    can be understood as the result of recursively organised
+    constraints acting upon an underlying structure.
+</p>
+<a
+    class="hero-link"
+    href="https://substack.com/@forbiddenzoot"
+    target="_blank"
+    rel="noopener noreferrer"
+>
+    Helen Christie on Substack →
+</a>
+</header>
 <!-- THESIS -->
-
-<section id="thesis">
-
-  <div class="section-inner">
-
-    <div class="section-number">
-      01 · Thesis
-    </div>
-
-    <h2>
-      The central idea
-    </h2>
-
-    <p class="lead">
-      Conscious experience may arise from the way a system is constrained
-      to access an underlying structure.
-    </p>
-
-    <div class="thesis-line">
-      Conscious awareness emerges from recursively organised constraints.
-    </div>
-
-    <p>
-      ATA proposes that an experiencing system does not necessarily have
-      unrestricted access to whatever underlying structure constitutes its
-      environment or physical state.
-    </p>
-
-    <p>
-      Instead, the system's organisation constrains what can become available
-      to experience, when it becomes available, and how different elements
-      become related within experience.
-    </p>
-
-    <p>
-      The term <strong>aperture</strong> describes this constrained access.
-    </p>
-
-  </div>
-
+<section id="thesis" class="thesis">
+<div class="section-label">
+    01 — Central Thesis
+</div>
+<h2>
+    Conscious awareness emerges from recursively organised constraints.
+</h2>
+<p class="thesis-statement">
+    ATA proposes that experience is not necessarily the creation
+    of reality at each moment, but the result of a particular
+    structure becoming accessible through a constrained system.
+</p>
 </section>
-
-
-
-<!-- FORMULATION NEAR TOP -->
-
+<!-- BASIC FORMULATION -->
 <section id="formulation">
-
-  <div class="section-inner">
-
-    <div class="section-number">
-      02 · Formalisation
+<div class="section-label">
+    02 — Basic Formulation
+</div>
+<h2>
+    The core model
+</h2>
+<p>
+    ATA begins with a compact mathematical representation
+    of constrained access:
+</p>
+<div class="formulation">
+    <div class="equation">
+        E(t) = A<sub>C(t)</sub>(M)
     </div>
-
-    <h2>
-      The core formal model
-    </h2>
-
-    <p class="lead formulation-intro">
-      ATA attempts to represent the relationship between an underlying
-      structure, a constraint configuration and an experiential state.
-    </p>
-
-    <div class="equation large">
-      \[
-      E(t)=A_{C(t)}(M)
-      \]
+    <div class="formulation-caption">
+        Experience as an aperture-dependent mapping over an underlying structure.
     </div>
-
+</div>
+<div class="definition-grid">
     <div class="definition">
-
-      <p>
-        <strong>\(M\)</strong> — the underlying model or state space.
-      </p>
-
-      <p>
-        <strong>\(C(t)\)</strong> — the constraint configuration at time \(t\).
-      </p>
-
-      <p>
-        <strong>\(A_C\)</strong> — the proposed aperture mapping.
-      </p>
-
-      <p>
-        <strong>\(E(t)\)</strong> — the resulting experiential state or
-        organisation.
-      </p>
-
+        <div class="symbol">
+            M
+        </div>
+        <div class="definition-title">
+            Underlying structure
+        </div>
+        <div class="definition-text">
+            The modelled state space or structure upon which
+            the aperture operates.
+        </div>
     </div>
-
-    <p>
-      In this formulation, experience is not represented as the entirety of
-      \(M\). It is represented as the result of applying a particular
-      constraint-dependent mapping to \(M\).
-    </p>
-
-    <div class="callout">
-
-      <p>
-        <strong>Interpretive status:</strong>
-        this is a proposed formalisation of the ATA concept, not a
-        mathematically established derivation of consciousness.
-      </p>
-
+    <div class="definition">
+        <div class="symbol">
+            C(t)
+        </div>
+        <div class="definition-title">
+            Constraint configuration
+        </div>
+        <div class="definition-text">
+            The time-dependent organisation of constraints
+            governing what can become accessible.
+        </div>
     </div>
-
-  </div>
-
+    <div class="definition">
+        <div class="symbol">
+            A<sub>C</sub>
+        </div>
+        <div class="definition-title">
+            Aperture mapping
+        </div>
+        <div class="definition-text">
+            A mapping determined by the relevant constraint
+            configuration.
+        </div>
+    </div>
+    <div class="definition">
+        <div class="symbol">
+            E(t)
+        </div>
+        <div class="definition-title">
+            Experiential state
+        </div>
+        <div class="definition-text">
+            The resulting organisation of experience at time t.
+        </div>
+    </div>
+</div>
+<p class="plain-language">
+    In plain language:
+    <strong>
+        experience is modelled as constrained access
+        to an underlying structure.
+    </strong>
+</p>
 </section>
-
-
-
-<!-- MATHEMATICS -->
-
-<section id="mathematics">
-
-  <div class="section-inner">
-
-    <div class="section-number">
-      03 · Mathematics
+<!-- MATHEMATICAL MODEL -->
+<section id="model">
+<div class="section-label">
+    03 — Mathematical Structure
+</div>
+<h2>
+    From intuition to formalisation
+</h2>
+<p>
+    The basic formulation can be expanded by specifying
+    the underlying structure and the accessibility of
+    different states within it.
+</p>
+<h3>
+    Underlying structure
+</h3>
+<div class="math-block">
+    <div class="math">
+        M = (X, g, Ψ)
     </div>
-
-    <h2>
-      Candidate mathematical structure
-    </h2>
-
-
-    <h3>
-      Underlying structure
-    </h3>
-
-    <div class="equation">
-      \[
-      M=(X,g,\Psi)
-      \]
+</div>
+<p>
+    Here, <strong>X</strong> represents an underlying state space,
+    <strong>g</strong> represents structural or geometric information,
+    and <strong>Ψ</strong> represents a state or field defined
+    over that structure.
+</p>
+<h3>
+    Accessibility
+</h3>
+<div class="math-block">
+    <div class="math">
+        α(x,t;C) ∈ [0,1]
     </div>
-
-    <p>
-      \(X\) represents an underlying state space, \(g\) represents structural
-      or geometric information, and \(\Psi\) represents a state or field
-      defined over \(X\).
-    </p>
-
-
-    <h3>
-      Constraint space
-    </h3>
-
-    <div class="equation">
-      \[
-      C(t)\in\mathcal C
-      \]
+</div>
+<p>
+    The quantity α is introduced as a candidate accessibility
+    function. It represents the degree to which a state or region
+    x is accessible under a particular constraint configuration.
+</p>
+<p class="note">
+    This is a proposed formal construct rather than
+    an established physical quantity.
+</p>
+<h3>
+    Continuous formulation
+</h3>
+<div class="math-block">
+    <div class="math">
+        E(t) = ∫<sub>M</sub> α(x,t;C(t)) Ψ(x) dμ(x)
     </div>
-
-    <p>
-      The constraint configuration is treated as an element of a space
-      \(\mathcal C\) containing possible system configurations.
-    </p>
-
-
-    <h3>
-      Accessibility
-    </h3>
-
-    <div class="equation">
-      \[
-      \alpha(x,t;C)\in[0,1]
-      \]
+</div>
+<p>
+    Under a continuous representation, experiential organisation
+    can therefore be modelled as a constraint-weighted mapping
+    over the underlying structure.
+</p>
+<h3>
+    Constraint dynamics
+</h3>
+<div class="math-block">
+    <div class="math">
+        dC/dt = F(C,u,t)
     </div>
-
-    <p>
-      A candidate accessibility function \(\alpha\) represents the degree to
-      which a component \(x\) is accessible under a particular constraint
-      configuration.
-    </p>
-
-
-    <h3>
-      Continuous representation
-    </h3>
-
-    <div class="equation large">
-      \[
-      E(t)=
-      \int_M
-      \alpha(x,t;C(t))
-      \Psi(x)\,d\mu(x)
-      \]
+</div>
+<p>
+    The constraint configuration may itself evolve.
+    The function <strong>F</strong> represents a proposed
+    dynamical rule, with <strong>u</strong> representing
+    relevant inputs or perturbations.
+</p>
+<h3>
+    Recursive organisation
+</h3>
+<div class="math-block">
+    <div class="math">
+        C<sup>(k+1)</sup> = F<sub>k</sub>(C<sup>(k)</sup>)
     </div>
-
-    <p>
-      This is a candidate continuous formulation. Its mathematical meaning
-      depends on the eventual definitions of \(M\), \(\Psi\), \(\alpha\),
-      and the measure \(\mu\).
-    </p>
-
-
-    <h3>
-      Constraint dynamics
-    </h3>
-
-    <div class="equation">
-      \[
-      \frac{dC}{dt}=F(C,u,t)
-      \]
-    </div>
-
-    <p>
-      The constraint configuration may itself evolve dynamically according
-      to its current state, external input \(u\), and time.
-    </p>
-
-
-    <h3>
-      Recursive organisation
-    </h3>
-
-    <div class="equation">
-      \[
-      C^{(k+1)}=F_k(C^{(k)})
-      \]
-    </div>
-
-    <p>
-      Recursive organisation is represented by the transformation of one
-      constraint level into another.
-    </p>
-
-    <div class="callout">
-
-      <p>
-        The important mathematical question is whether these objects can be
-        defined rigorously enough to generate meaningful consequences.
-      </p>
-
-    </div>
-
-  </div>
-
+</div>
+<p>
+    ATA uses recursive organisation to describe constraints
+    whose structure can themselves be constrained,
+    transformed, or embedded within higher-order organisation.
+</p>
 </section>
-
-
-
-<!-- OPEN PROBLEM -->
-
-<section id="open-problem" class="open-problem">
-
-  <div class="section-inner">
-
-    <div class="section-number">
-      04 · Open problem
-    </div>
-
-    <h2>
-      Defining recursive organisation
-    </h2>
-
-    <p class="lead">
-      The central unresolved mathematical problem is finding a rigorous
-      measure of recursive constraint organisation.
-    </p>
-
-    <div class="open-box">
-
-      <p>
-        A candidate quantity is:
-      </p>
-
-      <div class="equation">
-        \[
-        R:\mathcal C\rightarrow\mathbb R
-        \]
-      </div>
-
-      <p>
-        \(R(C)\) would represent some measurable property of the recursive
-        organisation of a constraint state.
-      </p>
-
-      <p>
-        <strong>
-          No unique definition of \(R(C)\) is currently claimed.
-        </strong>
-      </p>
-
-    </div>
-
-    <p>
-      The proposed hypothesis is that a measurable property of conscious
-      organisation could depend systematically on this quantity:
-    </p>
-
-    <div class="equation">
-      \[
-      R(C)\rightarrow\Phi(E)
-      \]
-    </div>
-
-    <p>
-      Here \(\Phi(E)\) represents some independently measurable property of
-      conscious organisation.
-    </p>
-
-
-    <h3>
-      Questions for mathematicians
-    </h3>
-
-    <ol>
-
-      <li>
-        What mathematical type should \(C(t)\) have?
-      </li>
-
-      <li>
-        Is \(A_C:M\rightarrow E\) an appropriate representation of an
-        aperture?
-      </li>
-
-      <li>
-        Should the aperture instead be an operator, projection, filtration,
-        graph transformation or dynamical process?
-      </li>
-
-      <li>
-        Under what conditions would the integral formulation be well-defined?
-      </li>
-
-      <li>
-        Can recursive organisation be represented by a known mathematical
-        quantity?
-      </li>
-
-      <li>
-        Can \(R(C)\) be defined so that it leads to genuinely testable
-        predictions?
-      </li>
-
-    </ol>
-
-  </div>
-
-</section>
-
-
-
 <!-- TESTING -->
-
 <section id="testing">
-
-  <div class="section-inner">
-
-    <div class="section-number">
-      05 · Testing
+<div class="section-label">
+    04 — Testing Programme
+</div>
+<h2>
+    What could ATA predict?
+</h2>
+<p>
+    A mathematical description alone does not establish a theory.
+    The stronger question is whether the formal structure can
+    generate predictions that distinguish ATA from alternative
+    explanations.
+</p>
+<div class="cards">
+    <div class="card">
+        <h3>
+            Constraint measurement
+        </h3>
+        <p>
+            Identify measurable properties of a system that could
+            plausibly represent changes in constraint organisation.
+        </p>
     </div>
-
-    <h2>
-      From mathematics to evidence
-    </h2>
-
-    <p class="lead">
-      The purpose of the formalisation is ultimately to determine whether
-      the aperture/constraint structure produces predictions that distinguish
-      ATA from alternative explanations.
-    </p>
-
-
-    <div class="test">
-
-      <div class="test-title">
-        Prediction 1 · Recursive organisation
-      </div>
-
-      <p>
-        Systems with similar broad levels of activity but different
-        recursively organised constraint states should exhibit systematic
-        differences in independently measured conscious organisation.
-      </p>
-
-      <div class="equation">
-        \[
-        R(C)\rightarrow\Phi(E)
-        \]
-      </div>
-
+    <div class="card">
+        <h3>
+            Recursive organisation
+        </h3>
+        <p>
+            Determine whether recursive structure can be quantified
+            and whether such a quantity relates systematically
+            to conscious organisation.
+        </p>
     </div>
-
-
-    <div class="test">
-
-      <div class="test-title">
-        Prediction 2 · Constraint dynamics
-      </div>
-
-      <p>
-        Changes in the dynamics of the constraint configuration may correspond
-        to measurable changes in temporal properties of experience.
-      </p>
-
-      <div class="equation">
-        \[
-        \left\|\frac{dC}{dt}\right\|\rightarrow\tau_A
-        \]
-      </div>
-
+    <div class="card">
+        <h3>
+            Temporal organisation
+        </h3>
+        <p>
+            Investigate whether changes in constraint dynamics
+            correspond to measurable changes in temporal
+            characteristics of experience.
+        </p>
     </div>
-
-
-    <div class="test">
-
-      <div class="test-title">
-        Prediction 3 · Experiential differentiation
-      </div>
-
-      <p>
-        Differences in constraint configuration should predict differences
-        in experiential organisation after controlling for broad measures
-        of overall activity.
-      </p>
-
-      <div class="equation">
-        \[
-        C_1\neq C_2
-        \Rightarrow
-        A_{C_1}\neq A_{C_2}
-        \Rightarrow
-        E_1\neq E_2
-        \]
-      </div>
-
+    <div class="card">
+        <h3>
+            Model comparison
+        </h3>
+        <p>
+            Compare aperture-based models against models that
+            explain the same observations without the additional
+            constraint structure.
+        </p>
     </div>
-
-
-    <h3>
-      Candidate testing pipeline
-    </h3>
-
-    <div class="equation">
-      \[
-      \text{data}
-      \rightarrow
-      C(t)
-      \rightarrow
-      R(C)
-      \rightarrow
-      \text{prediction}
-      \rightarrow
-      \text{observed data}
-      \]
+</div>
+<div class="highlight">
+    <div class="highlight-title">
+        Proposed testing pipeline
     </div>
-
-  </div>
-
+    <div class="math">
+        data → C(t) → R(C) → prediction → observed data
+    </div>
+</div>
 </section>
-
-
-
+<!-- OPEN MATHEMATICAL PROBLEM -->
+<section id="open-problem" class="open-problem">
+<div class="section-label">
+    05 — Open Mathematical Problem
+</div>
+<h2>
+    Can recursive constraint organisation be quantified?
+</h2>
+<p>
+    One of the central unresolved mathematical questions in ATA
+    is whether the proposed notion of recursive constraint
+    organisation can be represented by a useful quantitative
+    measure.
+</p>
+<div class="math-block">
+    <div class="math">
+        R : 𝒞 → ℝ
+    </div>
+</div>
+<p>
+    Here <strong>R(C)</strong> represents a proposed measure
+    of recursive organisation within the space of possible
+    constraint configurations.
+</p>
+<div class="highlight">
+    <div class="highlight-title">
+        Status
+    </div>
+    <p>
+        R(C) is an open construct. ATA does not claim that
+        a validated measure currently exists. Finding a
+        mathematically coherent and empirically useful definition
+        is itself part of the research programme.
+    </p>
+</div>
+<p>
+    A stronger version of the hypothesis would investigate whether
+    changes in R(C) systematically correspond to independently
+    measurable properties of conscious organisation.
+</p>
+<div class="math-block">
+    <div class="math">
+        R(C) → Φ(E)
+    </div>
+</div>
+<p class="note">
+    Φ(E) represents an independently measurable property
+    of experiential or conscious organisation.
+</p>
+</section>
 <!-- FALSIFICATION -->
-
 <section id="falsification">
-
-  <div class="section-inner">
-
-    <div class="section-number">
-      06 · Falsification
-    </div>
-
-    <h2>
-      What could disconfirm the model?
-    </h2>
-
-    <p class="lead">
-      ATA is intended to remain vulnerable to mathematical and empirical
-      criticism.
-    </p>
-
-    <ol>
-
-      <li>
-        A coherent mathematical definition of recursive constraint
-        organisation cannot be constructed.
-      </li>
-
-      <li>
-        \(R(C)\) cannot be operationalised or estimated reliably.
-      </li>
-
-      <li>
-        The proposed relationship between \(R(C)\) and conscious organisation
-        repeatedly fails empirical testing.
-      </li>
-
-      <li>
-        Models without the aperture/constraint mechanism explain the relevant
-        observations equally well or better.
-      </li>
-
-      <li>
-        The formalism turns out to reproduce an existing framework without
-        providing additional explanatory or predictive value.
-      </li>
-
-    </ol>
-
-    <div class="callout">
-
-      <p>
-        A failure of the formalisation would be informative. The objective is
-        to determine whether the aperture concept provides a useful
-        mathematical and empirical distinction.
-      </p>
-
-    </div>
-
-  </div>
-
+<div class="section-label">
+    06 — Falsification
+</div>
+<h2>
+    What could make ATA fail?
+</h2>
+<p>
+    ATA is intended to remain open to failure. The framework
+    would be weakened if its central concepts could not be made
+    precise or if its proposed explanatory structure provided
+    no advantage over existing alternatives.
+</p>
+<ol>
+    <li>
+        If constraint organisation cannot be given a coherent
+        mathematical definition, the formal programme fails.
+    </li>
+    <li>
+        If R(C) cannot be operationalised or measured in a
+        reproducible way, the quantitative extension remains
+        unsupported.
+    </li>
+    <li>
+        If predicted relationships between constraint organisation
+        and conscious organisation repeatedly fail, ATA loses
+        empirical support.
+    </li>
+    <li>
+        If existing theories explain the relevant observations
+        equally well or better without an aperture/constraint
+        structure, ATA's additional explanatory value is reduced.
+    </li>
+    <li>
+        If the mathematics merely redescribes existing models
+        without producing new consequences, the formalism may
+        have limited theoretical significance.
+    </li>
+</ol>
+<div class="quote">
+    A useful theory should specify not only what it could explain,
+    but also what would count against it.
+</div>
 </section>
-
-
-
 <!-- PHILOSOPHY -->
-
 <section id="philosophy">
-
-  <div class="section-inner">
-
-    <div class="section-number">
-      07 · Philosophy
+<div class="section-label">
+    07 — Philosophical Interpretation
+</div>
+<h2>
+    What follows if the framework is correct?
+</h2>
+<p>
+    The philosophical implications of ATA should be distinguished
+    from its mathematical claims. The following are interpretations
+    and consequences explored by the framework rather than
+    established empirical conclusions.
+</p>
+<div class="cards">
+    <div class="card">
+        <h3>
+            Temporal experience
+        </h3>
+        <p>
+            If an underlying structure is not identical to
+            the sequence of its access, the apparent flow
+            of experience may reflect changing accessibility
+            rather than the creation of each moment.
+        </p>
     </div>
-
-    <h2>
-      Philosophical implications
-    </h2>
-
-    <p class="lead">
-      The mathematical proposal sits within a broader philosophical
-      interpretation of consciousness, time and subjectivity.
-    </p>
-
-
-    <h3>
-      Time
-    </h3>
-
-    <p>
-      ATA is compatible with an eternalist or block-universe interpretation
-      in which events form part of a four-dimensional spacetime structure.
-      The mathematical formalisation does not itself establish eternalism.
-    </p>
-
-
-    <h3>
-      Perspective
-    </h3>
-
-    <p>
-      If access to an underlying structure is constrained, then a subject's
-      experience may constitute only a restricted perspective on that
-      structure.
-    </p>
-
-
-    <h3>
-      Selfhood
-    </h3>
-
-    <p>
-      Individuality can be interpreted as arising from organised constraints
-      that distinguish one experiential perspective from another, rather than
-      necessarily requiring awareness itself to consist of fundamentally
-      separate substances.
-    </p>
-
-
-    <h3>
-      Ignorance
-    </h3>
-
-    <p>
-      Ignorance can be understood as partly structural: a system cannot
-      experience or represent everything if its access is constrained.
-    </p>
-
-
-    <h3>
-      Suffering and attachment
-    </h3>
-
-    <p>
-      Psychological suffering can be interpreted through the relationship
-      between a constrained experiential state and the system's attachment
-      to particular representations of itself and its future.
-    </p>
-
-
-    <h3>
-      Death
-    </h3>
-
-    <p>
-      ATA treats biological death as the termination or transformation of
-      the biological constraint configuration associated with an embodied
-      perspective. The theory does not by itself establish what happens to
-      awareness after death.
-    </p>
-
-  </div>
-
+    <div class="card">
+        <h3>
+            Individuality
+        </h3>
+        <p>
+            Individual experience can be understood through
+            the particular constraints that distinguish one
+            biological system's access from another's.
+        </p>
+    </div>
+    <div class="card">
+        <h3>
+            The self
+        </h3>
+        <p>
+            The ordinary sense of a continuous self may arise
+            partly from the persistence and organisation of
+            constraints across successive experiential states.
+        </p>
+    </div>
+    <div class="card">
+        <h3>
+            Suffering
+        </h3>
+        <p>
+            Persistent suffering may be interpreted as a highly
+            stable organisation of experiential constraints,
+            rather than simply as the presence of an isolated
+            unpleasant event.
+        </p>
+    </div>
+</div>
+<h3>
+    Important distinction
+</h3>
+<p>
+    These philosophical implications do not constitute evidence
+    for the mathematical model. They are interpretations that
+    depend upon the underlying framework being viable.
+</p>
 </section>
-
-
-
 <!-- LIMITS -->
-
 <section id="limits">
-
-  <div class="section-inner">
-
-    <div class="section-number">
-      08 · Limits
+<div class="section-label">
+    08 — Limits
+</div>
+<h2>
+    What ATA does not currently establish
+</h2>
+<div class="limit-grid">
+    <div class="limit">
+        <strong>
+            Not an established physical theory
+        </strong>
+        <span>
+            ATA is a developing theoretical framework and has
+            not been experimentally validated as a theory
+            of physics.
+        </span>
     </div>
-
-    <h2>
-      What ATA does not establish
-    </h2>
-
-    <ul>
-
-      <li>
-        It does not establish that consciousness is non-physical.
-      </li>
-
-      <li>
-        It does not establish that consciousness exists independently of
-        the brain.
-      </li>
-
-      <li>
-        It does not prove an eternalist or block-universe ontology.
-      </li>
-
-      <li>
-        It does not establish survival of consciousness after biological
-        death.
-      </li>
-
-      <li>
-        It does not currently provide a validated measure of \(R(C)\).
-      </li>
-
-      <li>
-        It does not demonstrate that the proposed equations uniquely describe
-        consciousness.
-      </li>
-
-      <li>
-        It does not claim mathematical completeness.
-      </li>
-
-    </ul>
-
-  </div>
-
+    <div class="limit">
+        <strong>
+            Not proof of consciousness beyond brains
+        </strong>
+        <span>
+            The framework does not currently demonstrate that
+            consciousness exists independently of biological
+            systems.
+        </span>
+    </div>
+    <div class="limit">
+        <strong>
+            Not proof of eternalism
+        </strong>
+        <span>
+            The framework can be interpreted using an eternalist
+            picture of spacetime, but it does not itself establish
+            eternalism as physically true.
+        </span>
+    </div>
+    <div class="limit">
+        <strong>
+            Not an established equation
+        </strong>
+        <span>
+            The mathematical expressions presented here are
+            proposed formal structures for developing and testing
+            the framework.
+        </span>
+    </div>
+</div>
+<p style="margin-top:35px;">
+    The distinction between mathematical definition, hypothesis,
+    prediction and philosophical interpretation is deliberately
+    maintained throughout the framework.
+</p>
 </section>
-
-
-
 <!-- ABOUT -->
-
-<section id="about">
-
-  <div class="section-inner">
-
-    <div class="section-number">
-      09 · About
-    </div>
-
-    <h2>
-      An open investigation
-    </h2>
-
-    <p class="lead">
-      The Aperture Theory of Awareness is an independent attempt to develop
-      a philosophical model of consciousness and investigate whether parts
-      of that model can be formally expressed and empirically tested.
-    </p>
-
-    <p>
-      The project is intentionally open to mathematical criticism,
-      philosophical criticism, reformulation and rejection.
-    </p>
-
-    <p>
-      Mathematical readers are invited to examine the definitions,
-      mappings, assumptions and proposed quantities.
-    </p>
-
-    <p>
-      Philosophical readers are invited to examine the conceptual argument,
-      metaphysical assumptions and relationship to existing approaches to
-      consciousness.
-    </p>
-
-    <div class="tags">
-
-      <span class="tag">philosophy of mind</span>
-      <span class="tag">consciousness</span>
-      <span class="tag">mathematical modelling</span>
-      <span class="tag">dynamical systems</span>
-      <span class="tag">subjectivity</span>
-      <span class="tag">metaphysics</span>
-
-    </div>
-
-    <p style="text-align:center; margin-top:40px;">
-      <strong>Author: Helen Christie</strong>
-    </p>
-
-    <p style="text-align:center;">
-      Independent philosophical and theoretical investigation.
-    </p>
-
-  </div>
-
+<section id="about" class="author">
+<div class="section-label">
+    09 — About
+</div>
+<h2>
+    The author
+</h2>
+<div class="author-name">
+    Helen Christie
+</div>
+<p class="author-description">
+    The Aperture Theory of Awareness is an independently developed
+    theoretical framework exploring the relationship between
+    consciousness, constraint, accessibility and the structure
+    of experience.
+</p>
+<a
+    class="substack-link"
+    href="https://substack.com/@forbiddenzoot"
+    target="_blank"
+    rel="noopener noreferrer"
+>
+    Read Helen Christie's Substack →
+</a>
+<p class="footer-note">
+    The project is presented openly as a developing programme:
+    its mathematical definitions, empirical predictions and
+    philosophical consequences remain subject to criticism,
+    refinement and potential falsification.
+</p>
 </section>
-
-
 </main>
-
-
+<!-- FOOTER -->
 <footer>
-
-  <p>
-    The Aperture Theory of Awareness · ATA
-  </p>
-
-  <p>
-    A developing philosophical and mathematical framework
-  </p>
-
+The Aperture Theory of Awareness · Helen Christie
+<a
+    class="footer-substack"
+    href="https://substack.com/@forbiddenzoot"
+    target="_blank"
+    rel="noopener noreferrer"
+>
+    Substack →
+</a>
 </footer>
-
-
 </body>
 </html>
