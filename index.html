@@ -6,12 +6,12 @@
   <title>The Aperture Theory of Awareness — Helen Christie</title>
   <meta
     name="description"
-    content="The Aperture Theory of Awareness (ATA), developed by Helen Christie: a philosophical and mathematical framework proposing that conscious awareness emerges from recursively organised constraints."
+    content="The Aperture Theory of Awareness (ATA), developed by Helen Christie."
   >
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap"
     rel="stylesheet"
   >
   <script>
@@ -31,21 +31,19 @@
   </script>
   <style>
     /* =====================================================
-       ROOT
+       VARIABLES
     ===================================================== */
     :root {
       --black: #050505;
-      --black-2: #080808;
-      --surface: #0d0d0d;
-      --surface-2: #111111;
-      --white: #f2f2ef;
-      --off-white: #ddddda;
-      --grey: #999996;
-      --grey-2: #737370;
-      --grey-3: #4e4e4b;
-      --line: rgba(255,255,255,0.10);
-      --line-strong: rgba(255,255,255,0.18);
-      --max-width: 1160px;
+      --surface: #0b0b0b;
+      --surface-2: #101010;
+      --white: #f1f1ee;
+      --soft: #d4d4d0;
+      --grey: #92928e;
+      --dark-grey: #5c5c59;
+      --line: rgba(255,255,255,0.09);
+      --line-strong: rgba(255,255,255,0.16);
+      --content: 760px;
     }
     /* =====================================================
        RESET
@@ -57,14 +55,11 @@
       scroll-behavior: smooth;
     }
     body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
       margin: 0;
-      background:
-        radial-gradient(
-          circle at 50% 0%,
-          rgba(255,255,255,0.045),
-          transparent 35%
-        ),
-        var(--black);
+      background: var(--black);
       color: var(--white);
       font-family:
         "IBM Plex Sans",
@@ -75,24 +70,21 @@
       font-size: 16px;
       line-height: 1.75;
       font-weight: 400;
-      letter-spacing: 0.005em;
       -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
     }
-    ::selection {
-      background: var(--white);
-      color: var(--black);
+    img {
+      max-width: 100%;
     }
     a {
       color: inherit;
       text-decoration: none;
     }
     p {
-      margin: 0 0 1.5rem;
+      margin: 0 0 1.35rem;
     }
-    strong {
-      font-weight: 600;
-      color: var(--white);
+    ::selection {
+      background: var(--white);
+      color: var(--black);
     }
     /* =====================================================
        NAVIGATION
@@ -100,33 +92,34 @@
     nav {
       position: sticky;
       top: 0;
-      z-index: 1000;
+      z-index: 100;
+      width: 100%;
+      background: rgba(5,5,5,0.92);
       border-bottom: 1px solid var(--line);
-      background: rgba(5,5,5,0.88);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
     }
     .nav-inner {
-      max-width: var(--max-width);
-      min-height: 68px;
+      width: 100%;
+      max-width: var(--content);
       margin: 0 auto;
-      padding: 0 30px;
+      min-height: 58px;
+      padding: 0 18px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 30px;
+      gap: 18px;
     }
     .brand {
+      flex-shrink: 0;
       font-family: "IBM Plex Mono", monospace;
-      font-size: 13px;
+      font-size: 11px;
       font-weight: 500;
-      letter-spacing: 0.16em;
-      white-space: nowrap;
+      letter-spacing: 0.14em;
     }
     .nav-links {
+      min-width: 0;
       display: flex;
-      align-items: center;
-      gap: 25px;
+      gap: 17px;
       overflow-x: auto;
       scrollbar-width: none;
     }
@@ -134,513 +127,457 @@
       display: none;
     }
     .nav-links a {
+      flex-shrink: 0;
       color: var(--grey);
-      font-size: 11px;
+      font-size: 9px;
       font-weight: 500;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.07em;
       text-transform: uppercase;
-      white-space: nowrap;
-      transition: color 0.2s ease;
     }
-    .nav-links a:hover {
-      color: var(--white);
+    /* =====================================================
+       UNIVERSAL CONTENT WIDTH
+    ===================================================== */
+    .content {
+      width: 100%;
+      max-width: var(--content);
+      margin: 0 auto;
+      padding-left: 22px;
+      padding-right: 22px;
     }
     /* =====================================================
        HERO
     ===================================================== */
     .hero {
-      max-width: var(--max-width);
-      min-height: 72vh;
-      margin: 0 auto;
-      padding:
-        130px 30px
-        90px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      min-height: auto;
+      padding-top: 100px;
+      padding-bottom: 85px;
     }
     .eyebrow {
-      margin-bottom: 28px;
+      margin-bottom: 25px;
       color: var(--grey);
       font-family: "IBM Plex Mono", monospace;
-      font-size: 11px;
-      letter-spacing: 0.17em;
+      font-size: 9px;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
     }
     .hero h1 {
-      max-width: 960px;
-      margin: 0 0 35px;
-      font-size: clamp(48px, 8vw, 96px);
-      line-height: 0.96;
+      max-width: 650px;
+      margin: 0 0 28px;
+      font-size: clamp(43px, 13vw, 78px);
+      line-height: 0.98;
       letter-spacing: -0.065em;
       font-weight: 500;
     }
     .hero-description {
-      max-width: 720px;
-      color: var(--off-white);
-      font-size: clamp(19px, 2.5vw, 26px);
+      max-width: 590px;
+      color: var(--soft);
+      font-size: clamp(18px, 5vw, 24px);
       line-height: 1.45;
       font-weight: 300;
       letter-spacing: -0.015em;
     }
-    .hero-author {
-      margin-top: 42px;
+    .author-line {
+      margin-top: 32px;
       color: var(--grey);
       font-family: "IBM Plex Mono", monospace;
-      font-size: 11px;
-      letter-spacing: 0.10em;
+      font-size: 9px;
+      letter-spacing: 0.09em;
       text-transform: uppercase;
+    }
+    /* =====================================================
+       SECTIONS
+    ===================================================== */
+    section {
+      border-top: 1px solid var(--line);
+    }
+    .section {
+      padding-top: 72px;
+      padding-bottom: 78px;
+    }
+    .label {
+      margin-bottom: 25px;
+      color: var(--dark-grey);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 9px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    h2 {
+      margin: 0 0 30px;
+      font-size: clamp(31px, 8vw, 52px);
+      line-height: 1.06;
+      letter-spacing: -0.045em;
+      font-weight: 500;
+    }
+    .intro {
+      max-width: 650px;
+      color: var(--grey);
+      font-size: 15px;
+      line-height: 1.8;
     }
     /* =====================================================
        CORE FORMULATION
     ===================================================== */
     .core {
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
       background:
         radial-gradient(
-          circle at 50% 50%,
+          circle at 50% 35%,
           rgba(255,255,255,0.045),
-          transparent 48%
+          transparent 60%
         ),
         var(--surface);
     }
-    .core-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding:
-        105px 30px
-        115px;
+    .core h2 {
+      max-width: 600px;
     }
-    .section-marker {
-      margin-bottom: 28px;
-      color: var(--grey-2);
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 10px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-    .core-title {
-      max-width: 850px;
-      margin: 0 0 30px;
-      font-size: clamp(34px, 5vw, 58px);
-      line-height: 1.06;
-      letter-spacing: -0.045em;
-      font-weight: 500;
-    }
-    .core-intro {
-      max-width: 720px;
-      color: var(--grey);
-      font-size: 16px;
-    }
-    .core-equation {
-      margin: 75px 0 35px;
-      padding:
-        65px 25px;
+    .core-equation-wrap {
+      margin: 55px 0 25px;
+      padding: 40px 10px;
       border-top: 1px solid var(--line-strong);
       border-bottom: 1px solid var(--line-strong);
+      overflow: hidden;
       text-align: center;
-      overflow-x: auto;
-      font-size: clamp(25px, 5vw, 44px);
     }
-    .equation-caption {
-      text-align: center;
-      color: var(--grey-2);
+    .core-equation {
+      max-width: 100%;
+      overflow-x: auto;
+      overflow-y: hidden;
+      font-size: clamp(23px, 7vw, 38px);
+      scrollbar-width: none;
+    }
+    .core-equation::-webkit-scrollbar {
+      display: none;
+    }
+    .caption {
+      color: var(--dark-grey);
       font-family: "IBM Plex Mono", monospace;
-      font-size: 10px;
-      letter-spacing: 0.12em;
+      font-size: 9px;
+      letter-spacing: 0.10em;
+      text-align: center;
       text-transform: uppercase;
     }
     /* =====================================================
-       FORMULATION DEFINITIONS
+       DEFINITIONS
     ===================================================== */
     .definitions {
+      margin-top: 55px;
       border-top: 1px solid var(--line);
     }
     .definition {
-      display: grid;
-      grid-template-columns: 190px 1fr;
-      gap: 55px;
-      padding: 35px 0;
+      padding: 24px 0;
       border-bottom: 1px solid var(--line);
     }
     .definition-symbol {
+      margin-bottom: 8px;
       font-family: "IBM Plex Mono", monospace;
-      font-size: 17px;
+      font-size: 15px;
       color: var(--white);
     }
     .definition-text {
-      max-width: 760px;
-      color: var(--grey);
-      font-size: 15px;
-      line-height: 1.75;
-    }
-    /* =====================================================
-       MAIN SECTIONS
-    ===================================================== */
-    section:not(.core) {
-      border-bottom: 1px solid var(--line);
-    }
-    .section-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding:
-        105px 30px;
-    }
-    .section-heading {
-      max-width: 850px;
-      margin: 0 0 55px;
-      font-size: clamp(34px, 5vw, 58px);
-      line-height: 1.05;
-      letter-spacing: -0.045em;
-      font-weight: 500;
-    }
-    .section-intro {
-      max-width: 780px;
-      margin-bottom: 65px;
-      color: var(--grey);
-      font-size: 17px;
-      line-height: 1.8;
-    }
-    /* =====================================================
-       MATHEMATICAL EXTENSION
-    ===================================================== */
-    .math-grid {
-      display: grid;
-      grid-template-columns:
-        repeat(2, 1fr);
-      gap: 1px;
-      background: var(--line);
-    }
-    .math-card {
-      min-height: 270px;
-      padding: 38px;
-      background: var(--black);
-    }
-    .math-card-label {
-      margin-bottom: 25px;
-      color: var(--grey-2);
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 10px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-    .math-card h3 {
-      margin: 0 0 25px;
-      font-size: 20px;
-      font-weight: 600;
-      letter-spacing: -0.015em;
-    }
-    .formula {
-      margin: 25px 0;
-      overflow-x: auto;
-      font-size: 20px;
-    }
-    .math-card p {
       color: var(--grey);
       font-size: 14px;
       line-height: 1.7;
     }
     /* =====================================================
-       OPEN MATHEMATICAL PROBLEM
+       MATHEMATICS
+    ===================================================== */
+    .math-list {
+      margin-top: 50px;
+      border-top: 1px solid var(--line);
+    }
+    .math-item {
+      padding: 32px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .math-label {
+      margin-bottom: 13px;
+      color: var(--dark-grey);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 9px;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+    }
+    .math-item h3 {
+      margin: 0 0 20px;
+      font-size: 19px;
+      line-height: 1.3;
+      font-weight: 600;
+    }
+    .formula {
+      width: 100%;
+      margin: 20px 0 22px;
+      padding: 18px 10px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      overflow-x: auto;
+      text-align: center;
+      scrollbar-width: none;
+      font-size: 17px;
+    }
+    .formula::-webkit-scrollbar {
+      display: none;
+    }
+    .math-item p {
+      margin: 0;
+      color: var(--grey);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    /* =====================================================
+       OPEN PROBLEM
     ===================================================== */
     .open-problem {
-      margin-top: 70px;
-      padding: 45px;
-      border: 1px solid var(--line);
+      margin-top: 55px;
+      padding: 28px 22px;
       background: var(--surface);
+      border: 1px solid var(--line);
     }
     .open-problem h3 {
       margin: 0 0 20px;
-      font-size: 22px;
+      font-size: 20px;
       font-weight: 500;
     }
     .open-problem p {
-      max-width: 780px;
       color: var(--grey);
-      font-size: 15px;
+      font-size: 14px;
     }
     .open-formula {
-      margin: 40px 0;
-      font-size: 25px;
+      margin: 28px 0;
+      text-align: center;
+      font-size: 20px;
       overflow-x: auto;
     }
     /* =====================================================
        TESTING
     ===================================================== */
-    .testing-grid {
-      display: grid;
-      grid-template-columns:
-        repeat(4, 1fr);
-      gap: 1px;
-      background: var(--line);
+    .testing-list {
+      margin-top: 50px;
+      border-top: 1px solid var(--line);
     }
-    .testing-card {
-      min-height: 270px;
-      padding: 32px;
-      background: var(--black);
+    .testing-item {
+      padding: 30px 0;
+      border-bottom: 1px solid var(--line);
     }
     .testing-number {
-      margin-bottom: 55px;
-      color: var(--grey-2);
+      margin-bottom: 14px;
+      color: var(--dark-grey);
       font-family: "IBM Plex Mono", monospace;
       font-size: 10px;
     }
-    .testing-card h3 {
-      margin: 0 0 18px;
+    .testing-item h3 {
+      margin: 0 0 12px;
       font-size: 19px;
       font-weight: 600;
     }
-    .testing-card p {
+    .testing-item p {
+      margin: 0;
       color: var(--grey);
       font-size: 14px;
-      line-height: 1.7;
     }
     .falsification {
-      margin-top: 65px;
-      padding: 45px;
+      margin-top: 50px;
+      padding: 28px 22px;
       border: 1px solid var(--line);
     }
     .falsification h3 {
-      margin: 0 0 25px;
-      font-size: 21px;
+      margin: 0 0 20px;
+      font-size: 20px;
       font-weight: 500;
     }
     .falsification ul {
-      max-width: 800px;
       margin: 0;
-      padding-left: 22px;
+      padding-left: 19px;
     }
     .falsification li {
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       color: var(--grey);
       font-size: 14px;
-      line-height: 1.7;
-    }
-    /* =====================================================
-       PHILOSOPHICAL IMPLICATIONS
-    ===================================================== */
-    .philosophy-list {
-      border-top: 1px solid var(--line);
-    }
-    .philosophy-item {
-      display: grid;
-      grid-template-columns: 250px 1fr;
-      gap: 65px;
-      padding: 48px 0;
-      border-bottom: 1px solid var(--line);
-    }
-    .philosophy-title {
-      font-size: 22px;
-      line-height: 1.3;
-      font-weight: 500;
-      letter-spacing: -0.02em;
-    }
-    .philosophy-text {
-      max-width: 760px;
-      color: var(--grey);
-      font-size: 15px;
-      line-height: 1.8;
+      line-height: 1.65;
     }
     /* =====================================================
        THESIS
     ===================================================== */
     .thesis-statement {
-      max-width: 950px;
-      margin-bottom: 70px;
-      padding-left: 28px;
+      margin: 45px 0;
+      padding-left: 20px;
       border-left: 1px solid var(--white);
-      font-size: clamp(25px, 4vw, 43px);
-      line-height: 1.25;
+      color: var(--white);
+      font-size: clamp(23px, 6vw, 38px);
+      line-height: 1.3;
       font-weight: 300;
       letter-spacing: -0.025em;
     }
     .thesis-copy {
-      max-width: 780px;
-      color: var(--grey);
-      font-size: 16px;
-      line-height: 1.85;
-    }
-    /* =====================================================
-       LIMITS
-    ===================================================== */
-    .limits-box {
-      max-width: 850px;
-      padding: 45px;
-      border: 1px solid var(--line);
-      background: var(--surface);
-    }
-    .limits-box p {
       color: var(--grey);
       font-size: 15px;
       line-height: 1.8;
     }
     /* =====================================================
-       AUTHOR
+       PHILOSOPHY
+    ===================================================== */
+    .philosophy-list {
+      margin-top: 45px;
+      border-top: 1px solid var(--line);
+    }
+    .philosophy-item {
+      padding: 31px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .philosophy-title {
+      margin-bottom: 10px;
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: -0.015em;
+    }
+    .philosophy-text {
+      color: var(--grey);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+    /* =====================================================
+       LIMITS
+    ===================================================== */
+    .limits-box {
+      padding: 28px 22px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+    }
+    .limits-box p {
+      color: var(--grey);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+    /* =====================================================
+       ABOUT
     ===================================================== */
     .author-name {
-      margin-bottom: 25px;
-      font-size: clamp(35px, 5vw, 58px);
+      margin-bottom: 20px;
+      font-size: clamp(34px, 9vw, 52px);
       line-height: 1;
-      letter-spacing: -0.05em;
+      letter-spacing: -0.055em;
       font-weight: 500;
     }
     .author-description {
-      max-width: 720px;
+      max-width: 600px;
       color: var(--grey);
-      font-size: 16px;
+      font-size: 15px;
       line-height: 1.8;
     }
     /* =====================================================
        SUBSTACK
     ===================================================== */
     .substack {
-      border-top: 1px solid var(--line);
       background:
         radial-gradient(
           circle at 50% 100%,
-          rgba(255,255,255,0.065),
-          transparent 48%
+          rgba(255,255,255,0.06),
+          transparent 58%
         ),
-        #090909;
+        var(--surface);
     }
     .substack-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding:
-        130px 30px
-        145px;
+      padding-top: 85px;
+      padding-bottom: 95px;
       text-align: center;
     }
     .substack-label {
-      margin-bottom: 28px;
+      margin-bottom: 24px;
       color: var(--grey);
       font-family: "IBM Plex Mono", monospace;
-      font-size: 10px;
-      letter-spacing: 0.17em;
+      font-size: 9px;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
     }
     .substack-title {
-      max-width: 850px;
-      margin: 0 auto 25px;
-      font-size: clamp(44px, 7vw, 84px);
-      line-height: 0.95;
-      letter-spacing: -0.065em;
+      margin: 0 auto 22px;
+      font-size: clamp(40px, 11vw, 68px);
+      line-height: 0.98;
+      letter-spacing: -0.06em;
       font-weight: 500;
     }
     .substack-description {
-      max-width: 650px;
-      margin: 0 auto 45px;
+      max-width: 550px;
+      margin: 0 auto 35px;
       color: var(--grey);
-      font-size: 17px;
-      line-height: 1.7;
+      font-size: 15px;
+      line-height: 1.75;
     }
     .substack-button {
       display: inline-flex;
+      min-height: 54px;
+      max-width: 100%;
+      padding: 0 23px;
       align-items: center;
       justify-content: center;
-      min-height: 58px;
-      padding: 0 31px;
       background: var(--white);
-      border: 1px solid var(--white);
       color: var(--black);
-      font-size: 12px;
+      border: 1px solid var(--white);
+      font-size: 10px;
       font-weight: 600;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.07em;
       text-transform: uppercase;
-      transition:
-        background 0.2s ease,
-        color 0.2s ease;
+      transition: 0.2s ease;
     }
     .substack-button:hover {
       background: transparent;
       color: var(--white);
     }
     .substack-url {
-      margin-top: 23px;
-      color: var(--grey-3);
+      margin-top: 18px;
+      color: var(--dark-grey);
       font-family: "IBM Plex Mono", monospace;
-      font-size: 10px;
-      letter-spacing: 0.07em;
+      font-size: 9px;
     }
     /* =====================================================
        FOOTER
     ===================================================== */
     footer {
-      max-width: var(--max-width);
+      width: 100%;
+      max-width: var(--content);
       margin: 0 auto;
       padding:
-        40px 30px;
+        30px 22px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 30px;
-      color: var(--grey-3);
+      gap: 20px;
+      color: var(--dark-grey);
       font-family: "IBM Plex Mono", monospace;
-      font-size: 9px;
-      letter-spacing: 0.08em;
+      font-size: 8px;
+      letter-spacing: 0.07em;
       text-transform: uppercase;
     }
     /* =====================================================
-       MOBILE
+       VERY SMALL PHONES
     ===================================================== */
-    @media (max-width: 850px) {
-      .nav-inner {
-        padding: 0 20px;
-      }
-      .nav-links {
-        gap: 17px;
+    @media (max-width: 380px) {
+      .content {
+        padding-left: 18px;
+        padding-right: 18px;
       }
       .hero {
-        min-height: 72vh;
-        padding:
-          105px 22px
-          80px;
+        padding-top: 80px;
+        padding-bottom: 65px;
       }
-      .core-inner,
-      .section-inner {
-        padding:
-          80px 22px;
-        }
-      .definition {
-        grid-template-columns: 1fr;
-        gap: 12px;
-        padding: 28px 0;
+      .hero h1 {
+        font-size: 42px;
       }
-      .math-grid {
-        grid-template-columns: 1fr;
+      .hero-description {
+        font-size: 17px;
       }
-      .testing-grid {
-        grid-template-columns: 1fr;
+      .section {
+        padding-top: 60px;
+        padding-bottom: 65px;
       }
-      .testing-card {
-        min-height: auto;
+      .core-equation-wrap {
+        margin-top: 42px;
+        padding-top: 32px;
+        padding-bottom: 32px;
       }
-      .philosophy-item {
-        grid-template-columns: 1fr;
-        gap: 14px;
-        padding: 38px 0;
-      }
-      .open-problem,
-      .falsification,
-      .limits-box {
-        padding: 30px 23px;
-      }
-      .core-equation {
-        padding:
-          48px 10px;
-        font-size: 23px;
-      }
-      .substack-inner {
-        padding:
-          95px 22px
-          105px;
+      .substack-button {
+        width: 100%;
       }
       footer {
-        padding:
-          32px 22px;
         flex-direction: column;
-        align-items: flex-start;
       }
     }
   </style>
@@ -655,73 +592,63 @@
         ATA
       </a>
       <div class="nav-links">
-        <a href="#formulation">
-          Formulation
-        </a>
-        <a href="#mathematics">
-          Mathematics
-        </a>
-        <a href="#testing">
-          Testing
-        </a>
-        <a href="#thesis">
-          Thesis
-        </a>
-        <a href="#philosophy">
-          Philosophy
-        </a>
-        <a href="#limits">
-          Limits
-        </a>
-        <a href="#about">
-          About
-        </a>
+        <a href="#formulation">Formulation</a>
+        <a href="#mathematics">Mathematics</a>
+        <a href="#testing">Testing</a>
+        <a href="#thesis">Thesis</a>
+        <a href="#philosophy">Philosophy</a>
+        <a href="#limits">Limits</a>
+        <a href="#about">About</a>
       </div>
     </div>
   </nav>
   <!-- =====================================================
        HERO
   ===================================================== -->
-  <header class="hero" id="top">
-    <div class="eyebrow">
-      The Aperture Theory of Awareness
-    </div>
-    <h1>
-      Awareness as<br>
-      constrained access.
-    </h1>
-    <p class="hero-description">
-      A developing philosophical and mathematical framework proposing
-      that conscious awareness emerges from recursively organised
-      constraints.
-    </p>
-    <div class="hero-author">
-      Helen Christie
+  <header id="top">
+    <div class="content hero">
+      <div class="eyebrow">
+        The Aperture Theory of Awareness
+      </div>
+      <h1>
+        Awareness as<br>
+        constrained access.
+      </h1>
+      <p class="hero-description">
+        A developing philosophical and mathematical framework proposing
+        that conscious awareness emerges from recursively organised
+        constraints.
+      </p>
+      <div class="author-line">
+        Helen Christie
+      </div>
     </div>
   </header>
   <!-- =====================================================
        CORE FORMULATION
   ===================================================== -->
   <section class="core" id="formulation">
-    <div class="core-inner">
-      <div class="section-marker">
+    <div class="content section">
+      <div class="label">
         01 / Core formulation
       </div>
-      <h2 class="core-title">
+      <h2>
         The central proposal.
       </h2>
-      <p class="core-intro">
-        ATA begins with a simple formal question: can conscious
-        experience be represented as the result of an aperture mapping
-        applied to an underlying structure under a particular
-        configuration of constraints?
+      <p class="intro">
+        ATA begins with a formal question: can conscious experience be
+        represented as the result of an aperture mapping applied to an
+        underlying structure under a particular configuration of
+        constraints?
       </p>
-      <div class="core-equation">
-        \[
-        E(t)=A_{C(t)}(M)
-        \]
+      <div class="core-equation-wrap">
+        <div class="core-equation">
+          \[
+          E(t)=A_{C(t)}(M)
+          \]
+        </div>
       </div>
-      <div class="equation-caption">
+      <div class="caption">
         Candidate core formalisation
       </div>
       <div class="definitions">
@@ -757,32 +684,31 @@
             \(E(t)\)
           </div>
           <div class="definition-text">
-            The resulting experiential state or organisation at time
-            \(t\).
+            The resulting experiential state or organisation at time \(t\).
           </div>
         </div>
       </div>
     </div>
   </section>
   <!-- =====================================================
-       MATHEMATICAL STRUCTURE
+       MATHEMATICS
   ===================================================== -->
   <section id="mathematics">
-    <div class="section-inner">
-      <div class="section-marker">
-        02 / Mathematical structure
+    <div class="content section">
+      <div class="label">
+        02 / Mathematics
       </div>
-      <h2 class="section-heading">
-        Making the formulation more explicit.
+      <h2>
+        Making the formulation explicit.
       </h2>
-      <p class="section-intro">
-        The core equation is intentionally compact. To become a genuine
-        mathematical model, each of its components requires a precise
-        definition and an appropriate mathematical structure.
+      <p class="intro">
+        The core equation is intentionally compact. Each component
+        requires a precise mathematical definition before the framework
+        can become a fully specified model.
       </p>
-      <div class="math-grid">
-        <div class="math-card">
-          <div class="math-card-label">
+      <div class="math-list">
+        <div class="math-item">
+          <div class="math-label">
             Structure
           </div>
           <h3>
@@ -799,8 +725,8 @@
             or field.
           </p>
         </div>
-        <div class="math-card">
-          <div class="math-card-label">
+        <div class="math-item">
+          <div class="math-label">
             Constraint
           </div>
           <h3>
@@ -816,12 +742,12 @@
             \(\mathcal C\) of possible constraint states.
           </p>
         </div>
-        <div class="math-card">
-          <div class="math-card-label">
+        <div class="math-item">
+          <div class="math-label">
             Access
           </div>
           <h3>
-            Accessibility function
+            Accessibility
           </h3>
           <div class="formula">
             \[
@@ -829,13 +755,14 @@
             \]
           </div>
           <p>
-            A candidate function representing the degree to which a
-            location or state contributes to the accessible structure.
+            A candidate accessibility function representing the degree
+            to which a state or location contributes to accessible
+            structure.
           </p>
         </div>
-        <div class="math-card">
-          <div class="math-card-label">
-            Continuous model
+        <div class="math-item">
+          <div class="math-label">
+            Continuous representation
           </div>
           <h3>
             Constraint-weighted access
@@ -853,8 +780,8 @@
             weights contributions from the underlying structure.
           </p>
         </div>
-        <div class="math-card">
-          <div class="math-card-label">
+        <div class="math-item">
+          <div class="math-label">
             Dynamics
           </div>
           <h3>
@@ -870,8 +797,8 @@
             constraint configuration.
           </p>
         </div>
-        <div class="math-card">
-          <div class="math-card-label">
+        <div class="math-item">
+          <div class="math-label">
             Recursion
           </div>
           <h3>
@@ -918,21 +845,19 @@
        TESTING
   ===================================================== -->
   <section id="testing">
-    <div class="section-inner">
-      <div class="section-marker">
+    <div class="content section">
+      <div class="label">
         03 / Testing
       </div>
-      <h2 class="section-heading">
+      <h2>
         Can the formal structure produce predictions?
       </h2>
-      <p class="section-intro">
-        The mathematical formulation is intended to lead eventually
-        toward testable consequences. The central challenge is to
-        determine whether the proposed structure adds predictive content
-        rather than simply redescribing existing theories.
+      <p class="intro">
+        The aim is to determine whether the proposed structure produces
+        consequences that could distinguish ATA from existing explanations.
       </p>
-      <div class="testing-grid">
-        <div class="testing-card">
+      <div class="testing-list">
+        <div class="testing-item">
           <div class="testing-number">
             01
           </div>
@@ -940,11 +865,11 @@
             Define
           </h3>
           <p>
-            Specify exactly what counts as a constraint, an aperture,
-            an accessible state and an experiential state.
+            Specify exactly what counts as a constraint, aperture,
+            accessible state and experiential state.
           </p>
         </div>
-        <div class="testing-card">
+        <div class="testing-item">
           <div class="testing-number">
             02
           </div>
@@ -956,7 +881,7 @@
             recursive organisation can be measured or calculated.
           </p>
         </div>
-        <div class="testing-card">
+        <div class="testing-item">
           <div class="testing-number">
             03
           </div>
@@ -968,7 +893,7 @@
             measurable properties of conscious organisation.
           </p>
         </div>
-        <div class="testing-card">
+        <div class="testing-item">
           <div class="testing-number">
             04
           </div>
@@ -995,15 +920,14 @@
             operationalised or reproduced.
           </li>
           <li>
-            Predicted relationships between constraint organisation and
-            conscious organisation repeatedly fail.
+            Predicted relationships repeatedly fail.
           </li>
           <li>
-            Existing models explain the relevant observations equally
-            well or better without the aperture/constraint structure.
+            Existing models explain the observations equally well or
+            better without the aperture/constraint structure.
           </li>
           <li>
-            The formalism provides no consequences beyond a
+            The formalism produces no consequences beyond a
             redescription of existing models.
           </li>
         </ul>
@@ -1014,12 +938,12 @@
        THESIS
   ===================================================== -->
   <section id="thesis">
-    <div class="section-inner">
-      <div class="section-marker">
+    <div class="content section">
+      <div class="label">
         04 / Thesis
       </div>
-      <h2 class="section-heading">
-        The philosophical claim behind the mathematics.
+      <h2>
+        The philosophical claim.
       </h2>
       <div class="thesis-statement">
         Conscious awareness emerges from recursively organised constraints.
@@ -1037,9 +961,7 @@
         </p>
         <p>
           The apparent continuity of experience may therefore arise from
-          the ordered transformation of constraints rather than requiring
-          consciousness itself to be fundamentally identical with a
-          continuously recreated sequence.
+          the ordered transformation of constraints.
         </p>
       </div>
     </div>
@@ -1048,12 +970,12 @@
        PHILOSOPHY
   ===================================================== -->
   <section id="philosophy">
-    <div class="section-inner">
-      <div class="section-marker">
+    <div class="content section">
+      <div class="label">
         05 / Philosophy
       </div>
-      <h2 class="section-heading">
-        What constrained access could imply.
+      <h2>
+        Implications of constrained access.
       </h2>
       <div class="philosophy-list">
         <div class="philosophy-item">
@@ -1061,12 +983,10 @@
             Time
           </div>
           <div class="philosophy-text">
-            <p>
-              If an underlying structure contains relations that are not
-              themselves experienced as a simple sequence, temporal
-              succession may be understood as a consequence of ordered
-              access through a local aperture.
-            </p>
+            If an underlying structure contains relations that are not
+            themselves experienced as a simple sequence, temporal
+            succession may be understood as a consequence of ordered
+            access through a local aperture.
           </div>
         </div>
         <div class="philosophy-item">
@@ -1074,11 +994,9 @@
             Perspective
           </div>
           <div class="philosophy-text">
-            <p>
-              Different apertures may occupy different constraint
-              configurations and consequently access different portions
-              or organisations of the same underlying structure.
-            </p>
+            Different apertures may occupy different constraint
+            configurations and consequently access different portions
+            or organisations of the same underlying structure.
           </div>
         </div>
         <div class="philosophy-item">
@@ -1086,11 +1004,8 @@
             Selfhood
           </div>
           <div class="philosophy-text">
-            <p>
-              The self can be interpreted as a temporally continuous
-              organisation produced by a particular constraint structure,
-              rather than necessarily as an entirely independent entity.
-            </p>
+            The self can be interpreted as a temporally continuous
+            organisation produced by a particular constraint structure.
           </div>
         </div>
         <div class="philosophy-item">
@@ -1098,11 +1013,9 @@
             Ignorance
           </div>
           <div class="philosophy-text">
-            <p>
-              Ignorance may be a structural consequence of limited access.
-              An aperture does not need to access the entirety of the
-              structure in which it is embedded.
-            </p>
+            Ignorance may be a structural consequence of limited access.
+            An aperture does not need to access the entirety of the
+            structure in which it is embedded.
           </div>
         </div>
         <div class="philosophy-item">
@@ -1110,11 +1023,9 @@
             Suffering
           </div>
           <div class="philosophy-text">
-            <p>
-              Suffering may partly involve attachment to particular
-              accessible states, expectations and representations of the
-              self within a changing constraint configuration.
-            </p>
+            Suffering may partly involve attachment to particular
+            accessible states, expectations and representations of the
+            self.
           </div>
         </div>
         <div class="philosophy-item">
@@ -1122,12 +1033,10 @@
             Death
           </div>
           <div class="philosophy-text">
-            <p>
-              Biological death can be described within ATA as the
-              termination of an organism's particular constraint
-              configuration. What this implies for consciousness beyond
-              biological function remains an open philosophical question.
-            </p>
+            Biological death can be described as the termination of an
+            organism's particular constraint configuration. What this
+            implies for consciousness beyond biological function remains
+            an open philosophical question.
           </div>
         </div>
       </div>
@@ -1137,11 +1046,11 @@
        LIMITS
   ===================================================== -->
   <section id="limits">
-    <div class="section-inner">
-      <div class="section-marker">
+    <div class="content section">
+      <div class="label">
         06 / Limits
       </div>
-      <h2 class="section-heading">
+      <h2>
         What remains unresolved.
       </h2>
       <div class="limits-box">
@@ -1170,8 +1079,8 @@
        ABOUT
   ===================================================== -->
   <section id="about">
-    <div class="section-inner">
-      <div class="section-marker">
+    <div class="content section">
+      <div class="label">
         07 / About
       </div>
       <div class="author-name">
@@ -1188,7 +1097,7 @@
        SUBSTACK
   ===================================================== -->
   <section class="substack">
-    <div class="substack-inner">
+    <div class="content substack-inner">
       <div class="substack-label">
         Further writing by Helen Christie
       </div>
