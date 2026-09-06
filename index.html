@@ -5,19 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Aperture Theory of Awareness — ATA</title>
 <meta name="description" content="The Aperture Theory of Awareness: a developing philosophical and mathematical framework proposing that conscious awareness emerges from recursively organised constraints.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
     --black: #050505;
     --near-black: #080808;
     --surface: #0d0d0d;
     --surface-light: #121212;
-    --white: #eeeeeb;
-    --soft-white: #d5d5d0;
-    --grey: #858585;
-    --dark-grey: #565656;
-    --line: rgba(255,255,255,0.085);
+    --white: #f1f1ed;
+    --soft-white: #d6d6d1;
+    --grey: #8b8b87;
+    --dark-grey: #555552;
+    --line: rgba(255,255,255,0.09);
     --max-width: 1100px;
 }
+/* RESET */
 * {
     box-sizing: border-box;
 }
@@ -29,27 +33,28 @@ body {
     background:
         radial-gradient(
             circle at 50% -10%,
-            rgba(255,255,255,0.045),
+            rgba(255,255,255,0.035),
             transparent 38%
         ),
         var(--black);
     color: var(--soft-white);
     font-family:
+        "Inter",
         -apple-system,
         BlinkMacSystemFont,
         "Segoe UI",
-        Helvetica,
-        Arial,
         sans-serif;
-    line-height: 1.75;
-    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.8;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
 }
 a {
     color: inherit;
     text-decoration: none;
 }
 ::selection {
-    background: #eeeeeb;
+    background: #f1f1ed;
     color: #050505;
 }
 /* NAVIGATION */
@@ -57,7 +62,7 @@ nav {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(5,5,5,0.92);
+    background: rgba(5,5,5,0.91);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
     border-bottom: 1px solid var(--line);
@@ -71,15 +76,16 @@ nav {
     padding: 18px 28px;
 }
 .logo {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 17px;
-    letter-spacing: 0.08em;
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
     color: var(--white);
 }
 .nav-links {
     display: flex;
     gap: 24px;
-    font-size: 13px;
+    font-size: 12px;
     color: var(--grey);
 }
 .nav-links a {
@@ -88,14 +94,14 @@ nav {
 .nav-links a:hover {
     color: var(--white);
 }
-/* GENERAL LAYOUT */
+/* MAIN */
 main {
     max-width: var(--max-width);
     margin: auto;
     padding: 0 28px 120px;
 }
 section {
-    padding: 105px 0;
+    padding: 110px 0;
     border-bottom: 1px solid var(--line);
 }
 section:last-child {
@@ -112,42 +118,47 @@ section:last-child {
 .eyebrow {
     color: var(--grey);
     text-transform: uppercase;
-    letter-spacing: 0.18em;
-    font-size: 11px;
-    margin-bottom: 25px;
+    letter-spacing: 0.2em;
+    font-size: 10px;
+    font-weight: 500;
+    margin-bottom: 27px;
 }
 h1 {
     margin: 0;
-    max-width: 900px;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(52px, 8vw, 104px);
+    max-width: 920px;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(62px, 9vw, 118px);
     font-weight: 400;
-    letter-spacing: -0.055em;
-    line-height: 0.98;
+    letter-spacing: -0.045em;
+    line-height: 0.88;
     color: var(--white);
 }
 .hero-subtitle {
-    margin-top: 34px;
-    max-width: 720px;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(24px, 3vw, 38px);
-    line-height: 1.25;
+    margin-top: 38px;
+    max-width: 700px;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(27px, 3vw, 40px);
+    font-weight: 400;
+    line-height: 1.18;
     color: var(--soft-white);
 }
 .hero-description {
     margin-top: 30px;
-    max-width: 670px;
+    max-width: 650px;
     color: var(--grey);
-    font-size: 17px;
+    font-size: 15px;
+    line-height: 1.8;
 }
 .hero-link {
     display: inline-block;
+    width: fit-content;
     margin-top: 35px;
-    padding: 12px 20px;
+    padding: 11px 19px;
     border: 1px solid rgba(255,255,255,0.18);
     color: var(--white);
-    font-size: 13px;
-    letter-spacing: 0.04em;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     transition:
         background 0.2s ease,
         color 0.2s ease;
@@ -156,52 +167,65 @@ h1 {
     background: var(--white);
     color: var(--black);
 }
-/* SECTION LABELS */
+/* SECTION LABEL */
 .section-number {
     color: var(--dark-grey);
-    font-size: 12px;
-    letter-spacing: 0.18em;
-    margin-bottom: 18px;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
 }
+/* HEADINGS */
 h2 {
-    margin: 0 0 30px;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(36px, 5vw, 60px);
+    margin: 0 0 32px;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(45px, 6vw, 68px);
     font-weight: 400;
     letter-spacing: -0.035em;
-    line-height: 1.05;
+    line-height: 0.98;
     color: var(--white);
 }
 h3 {
-    margin-top: 50px;
+    margin-top: 52px;
     margin-bottom: 15px;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 25px;
-    font-weight: 400;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 29px;
+    font-weight: 500;
+    line-height: 1.15;
     color: var(--white);
 }
 p {
     max-width: 760px;
     margin: 0 0 22px;
 }
+strong {
+    color: var(--white);
+    font-weight: 500;
+}
+em {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 1.08em;
+}
 .muted {
     color: var(--grey);
 }
 /* EQUATIONS */
 .equation {
-    margin: 45px 0;
-    padding: 34px 28px;
+    margin: 48px 0;
+    padding: 36px 28px;
     background: var(--surface);
-    border-top: 1px solid rgba(255,255,255,0.12);
-    border-bottom: 1px solid rgba(255,255,255,0.06);
+    border-top: 1px solid rgba(255,255,255,0.11);
+    border-bottom: 1px solid rgba(255,255,255,0.055);
     text-align: center;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(24px, 3vw, 36px);
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(29px, 3.4vw, 40px);
+    line-height: 1.2;
     color: var(--white);
     overflow-x: auto;
 }
 .equation.small {
-    font-size: clamp(20px, 2.5vw, 29px);
+    font-size: clamp(23px, 2.7vw, 31px);
 }
 /* DEFINITIONS */
 .definition-grid {
@@ -209,33 +233,33 @@ p {
     grid-template-columns:
         repeat(2, minmax(0, 1fr));
     gap: 1px;
-    margin-top: 40px;
+    margin-top: 42px;
     background: var(--line);
     border: 1px solid var(--line);
 }
 .definition {
     background: var(--surface);
-    padding: 28px;
+    padding: 30px;
 }
 .definition strong {
     display: block;
-    margin-bottom: 8px;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 21px;
-    font-weight: 400;
+    margin-bottom: 9px;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 25px;
+    font-weight: 500;
     color: var(--white);
 }
-/* OPEN QUESTION */
+/* OPEN PROBLEM */
 .open-problem {
-    margin-top: 45px;
-    padding: 42px 34px;
+    margin-top: 48px;
+    padding: 44px 36px;
     background:
         linear-gradient(
             135deg,
             #111111,
             #090909
         );
-    border: 1px solid rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.11);
 }
 .open-problem h3 {
     margin-top: 0;
@@ -247,21 +271,23 @@ p {
     color: var(--soft-white);
 }
 .questions li {
-    margin-bottom: 13px;
+    margin-bottom: 14px;
+    padding-left: 6px;
 }
 /* TESTING */
 .prediction {
-    padding: 35px 0;
+    padding: 38px 0;
     border-top: 1px solid var(--line);
 }
 .prediction:first-of-type {
     border-top: none;
 }
 .prediction-label {
-    margin-bottom: 12px;
+    margin-bottom: 13px;
     color: var(--grey);
-    font-size: 11px;
-    letter-spacing: 0.15em;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
 }
 .prediction h3 {
@@ -269,13 +295,13 @@ p {
 }
 /* HIGHLIGHT */
 .highlight {
-    margin: 50px 0;
-    padding: 35px;
-    border-left: 2px solid #eeeeeb;
+    margin: 52px 0;
+    padding: 38px;
+    border-left: 1px solid #eeeeeb;
     background: var(--surface);
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 21px;
-    line-height: 1.55;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 25px;
+    line-height: 1.45;
     color: var(--white);
 }
 /* LISTS */
@@ -284,35 +310,90 @@ ul {
     max-width: 760px;
 }
 li {
-    margin-bottom: 12px;
+    margin-bottom: 13px;
 }
-/* FOOTER / ABOUT */
+/* AUTHOR */
 .author {
-    margin-top: 50px;
-    padding-top: 30px;
+    margin-top: 55px;
+    padding-top: 32px;
     border-top: 1px solid var(--line);
     color: var(--grey);
 }
 .author strong {
     color: var(--white);
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 27px;
+    font-weight: 500;
+}
+/* SUBSTACK FEATURE */
+.substack-section {
+    padding: 120px 0 100px;
+    text-align: center;
+    border-top: 1px solid var(--line);
+}
+.substack-section .section-number {
+    margin-bottom: 25px;
+}
+.substack-title {
+    max-width: 800px;
+    margin: 0 auto 22px;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(48px, 6vw, 72px);
     font-weight: 400;
-    font-size: 20px;
+    letter-spacing: -0.035em;
+    line-height: 1;
+    color: var(--white);
+}
+.substack-description {
+    max-width: 600px;
+    margin: 0 auto 38px;
+    color: var(--grey);
+    font-size: 15px;
+    line-height: 1.8;
+}
+.substack-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 230px;
+    padding: 15px 27px;
+    border: 1px solid rgba(255,255,255,0.22);
+    background: var(--white);
+    color: var(--black);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+.substack-button:hover {
+    background: transparent;
+    color: var(--white);
+    border-color: rgba(255,255,255,0.35);
+}
+.substack-name {
+    margin-top: 22px;
+    color: var(--dark-grey);
+    font-size: 11px;
+    letter-spacing: 0.08em;
 }
 /* FOOTER */
 footer {
     max-width: var(--max-width);
     margin: auto;
     padding: 45px 28px 60px;
-    border-top: 1px solid var(--line);
     color: var(--dark-grey);
-    font-size: 12px;
-    letter-spacing: 0.04em;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-align: center;
 }
 /* MOBILE */
 @media (max-width: 750px) {
     body {
-        font-size: 16px;
+        font-size: 15px;
     }
     .nav-inner {
         padding: 15px 18px;
@@ -324,37 +405,52 @@ footer {
         padding: 0 18px 80px;
     }
     .hero {
-        min-height: 80vh;
+        min-height: 82vh;
         padding-top: 75px;
     }
     h1 {
-        font-size: clamp(48px, 15vw, 76px);
+        font-size: clamp(57px, 16vw, 82px);
+        line-height: 0.9;
     }
     .hero-subtitle {
-        font-size: 25px;
+        font-size: 27px;
+        line-height: 1.2;
     }
     section {
-        padding: 75px 0;
+        padding: 78px 0;
     }
     h2 {
-        font-size: 42px;
+        font-size: 48px;
+    }
+    h3 {
+        font-size: 27px;
     }
     .definition-grid {
         grid-template-columns: 1fr;
     }
     .definition {
-        padding: 23px;
+        padding: 25px;
     }
     .equation {
-        padding: 27px 18px;
-        font-size: 23px;
+        padding: 28px 18px;
+        font-size: 27px;
     }
     .open-problem {
-        padding: 28px 23px;
+        padding: 30px 23px;
     }
     .highlight {
-        padding: 25px;
-        font-size: 19px;
+        padding: 27px;
+        font-size: 22px;
+    }
+    .substack-section {
+        padding: 90px 0 75px;
+    }
+    .substack-title {
+        font-size: 50px;
+    }
+    .substack-button {
+        width: 100%;
+        max-width: 300px;
     }
     footer {
         padding-left: 18px;
@@ -821,15 +917,31 @@ Helen Christie
 <p>
 Independent philosophical and theoretical investigation.
 </p>
-<p>
-<a
-href="https://substack.com/@forbiddenzoot"
-target="_blank"
-rel="noopener"
->
-Substack
-</a>
+</div>
+</section>
+<!-- SUBSTACK -->
+<section class="substack-section">
+<div class="section-number">
+Continue the investigation
+</div>
+<h2 class="substack-title">
+Read the wider work.
+</h2>
+<p class="substack-description">
+Further writing on consciousness, philosophy, subjectivity and the
+development of the Aperture Theory of Awareness is published on
+Substack.
 </p>
+
+<a
+class=“substack-button”
+href=“https://substack.com/@forbiddenzoot”
+target=”_blank”
+rel=“noopener”
+
+Visit Helen Christie’s Substack
+<div class="substack-name">
+substack.com/@forbiddenzoot
 </div>
 </section>
 </main>
@@ -838,7 +950,6 @@ Substack
 The Aperture Theory of Awareness · Helen Christie · 2026
 
 </footer>
-<!-- MathJax -->
 <script>
 window.MathJax = {
     tex: {
